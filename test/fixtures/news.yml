@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  typenew: one
+  title: MyString
+  description: MyString
+  img_thumb: MyString
+  content: MyText
+  day_create: 2018-01-22 08:35:10
+
+two:
+  typenew: two
+  title: MyString
+  description: MyString
+  img_thumb: MyString
+  content: MyText
+  day_create: 2018-01-22 08:35:10

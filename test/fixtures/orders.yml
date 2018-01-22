@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  User: one
+  oder_code: MyString
+  date_purchase: 2018-01-22 08:35:30
+  content: MyString
+  adress: MyString
+  price: 9.99
+  phone: MyString
+
+two:
+  User: two
+  oder_code: MyString
+  date_purchase: 2018-01-22 08:35:30
+  content: MyString
+  adress: MyString
+  price: 9.99
+  phone: MyString
