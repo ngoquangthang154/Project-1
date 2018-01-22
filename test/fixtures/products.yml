@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trademark: one
+  assort: one
+  name: MyString
+  img_detail: MyString
+  content: MyText
+  price: 9.99
+  status: 1
+  keys: MyString
+  star: 9.99
+
+two:
+  trademark: two
+  assort: two
+  name: MyString
+  img_detail: MyString
+  content: MyText
+  price: 9.99
+  status: 1
+  keys: MyString
+  star: 9.99

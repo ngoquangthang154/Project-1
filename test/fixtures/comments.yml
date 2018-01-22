@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  product: one
+  comment: MyString
+  time_cmt: 2018-01-22 08:35:51
+  reply: 1
+
+two:
+  user: two
+  product: two
+  comment: MyString
+  time_cmt: 2018-01-22 08:35:51
+  reply: 1
