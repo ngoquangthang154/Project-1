@@ -4,8 +4,8 @@ class CreateOrderDetails < ActiveRecord::Migration[5.1]
       t.references :order, foreign_key: true
       t.references :product, foreign_key: true
       t.integer :quantity
-      t.decimal :price_detail
-      t.decimal :price_total
+      t.float :price_detail
+      t.float :price_total
 
       t.timestamps
     end

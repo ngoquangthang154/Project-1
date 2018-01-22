@@ -10,8 +10,14 @@ arrTrademark.each do |at|
   Trademark.create!(name:  name)
 end
 
-Admin.create!(username:  "admin",
- password: "1")
+User.create!(
+  username: "admin",
+  password: "1",
+  name:  "my admin",
+  email: "admin1234@gmail.com",
+  phone: "01888888888",
+  role: 0
+  )
 
 5.times do |n|
   name  = Faker::Name.name
@@ -31,7 +37,9 @@ end
     password: password,
     name:  name,
     email: email,
-    phone: phone)
+    phone: phone,
+    role: 1
+    )
 end
 
 20.times do |n|

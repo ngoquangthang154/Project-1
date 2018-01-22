@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180122013551) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
-    t.integer "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "assorts", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -64,8 +56,8 @@ ActiveRecord::Schema.define(version: 20180122013551) do
     t.integer "order_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.decimal "price_detail"
-    t.decimal "price_total"
+    t.float "price_detail"
+    t.float "price_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id", "created_at"], name: "index_order_details_on_order_id_and_created_at"
@@ -80,7 +72,7 @@ ActiveRecord::Schema.define(version: 20180122013551) do
     t.datetime "date_purchase"
     t.string "content"
     t.string "adress"
-    t.decimal "price"
+    t.float "price"
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -94,10 +86,10 @@ ActiveRecord::Schema.define(version: 20180122013551) do
     t.string "name"
     t.string "img_detail"
     t.text "content"
-    t.decimal "price"
+    t.float "price"
     t.integer "status"
     t.string "keys"
-    t.decimal "star"
+    t.float "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["assort_id", "created_at"], name: "index_products_on_assort_id_and_created_at"
@@ -136,6 +128,7 @@ ActiveRecord::Schema.define(version: 20180122013551) do
     t.string "name"
     t.string "phone"
     t.string "email"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -6,7 +6,7 @@ class CreateOrders < ActiveRecord::Migration[5.1]
       t.datetime :date_purchase
       t.string :content
       t.string :adress
-      t.decimal :price
+      t.float :price
       t.string :phone
 
       t.timestamps

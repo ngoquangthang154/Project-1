@@ -6,10 +6,10 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :img_detail
       t.text :content
-      t.decimal :price
+      t.float :price
       t.integer :status
       t.string :keys
-      t.decimal :star
+      t.float :star
 
       t.timestamps
     end
