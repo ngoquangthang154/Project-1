@@ -6,7 +6,6 @@ class Product < ApplicationRecord
   has_many :orderDetails
   has_many :rates
 
-
   validates :name,presence: true, length: {maximum: 10}
   validates :content,presence: true, length: {maximum: 100}
   VALID_PRICE_REGEX = /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/
@@ -48,4 +47,9 @@ class Product < ApplicationRecord
     end
   end
 
+  def self.getdetail id
+    if id
+      eager_load(:rates, :comments).find_by_id(id)
+    end
+  end
 end

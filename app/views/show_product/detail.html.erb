@@ -1,0 +1,59 @@
+<% provide :title, t("views.show_product.detail.title") %>
+<div class="container">
+  <div class="card-p-d">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview-p-d col-md-6">
+          <div class="preview-pic tab-content-p-d tab-pane active">
+            <img class="img-product-detail" src="<%= @product.img_detail %>" />
+          </div>
+        </div>
+        <div class="details-product col-md-6">
+          <h3 class="product-title-detail"><%= @product.name %></h3>
+          <div class="rating">
+            <div class="stars">
+              <% for i in 0...5 %>
+                <% if i+1 < @product.star %>
+                  <span class="fa fa-star checked"></span>
+                <%elsif (@product.star - @product.star.to_i).abs > 0 && @product.star.to_i == i %>
+                  <span class="fa fa-star-half-o checked"></span>
+                <%else%>
+                  <span class="fa fa-star "></span>
+                <% end %>
+              <% end %>
+            </div>
+            <br/>
+            <span class="review-no badge"><%= "#{@product.rates.size} #{t "views.show_product.detail.review"}" %></span>
+            <a href="#" class="label label-info">
+              <span class="glyphicon glyphicon-comment"></span> <%= "#{@product.comments.size} #{t "views.show_product.detail.cmt"}" %>
+            </a>
+          </div>
+          <p class="product-description"><%= @product.content %></p>
+          <h4 class="price-p-d"> <%= t "views.show_product.detail.price" %>
+            <span>$<%= @product.price %></span>
+          </h4>
+          <p class="vote">
+            <strong>91%</strong> <%= t "views.show_product.detail.userby" %>
+            <strong>(<%= @product.rates.size %> votes)</strong>
+          </p>
+          <h7 class="keywork-title-p-d">Key work:
+            <span class="keyworks"><%= @product.keys %></span>
+          </h7>
+          <h5 class="status-p-d"><%= t "views.show_product.detail.status" %>
+            <span class="stock"><%= t "views.show_product.detail.oos" %></span>
+          </h5>
+          <div class="action">
+            <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default" do %>
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <%= t "views.show_product.detail.addtocart" %>
+            <% end %>
+            <%= link_to showp_path, class: "text-center back-to-show btn btn-default" do %>
+            <i class="fa fa-angle-left"></i>
+            <%= t "views.show_product.detail.continue" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
