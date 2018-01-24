@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :comment
-  has_many :order
-  has_many :rate
+  has_many :comments
+  has_many :orders
+  has_many :rates
 end

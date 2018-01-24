@@ -1,0 +1,32 @@
+<h1>Add Product</h1>
+<%= image_tag("anh-noel-dep.jpg", :alt => "anh-noel",style: "width:200px") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@product) do |f| %>
+      <%= render "shared/error_messages" %>
+      <%= f.label :name, "Name Product" %>
+      <%= f.text_field :name, class: "form-control" %>
+
+
+      <%= f.label :trademark %>
+      <%= f.collection_select :trademark_id, Trademark.all, :id, :name %>
+
+      <%= f.label :assort %>
+      <%= f.collection_select :assort_id, Assort.all, :id, :name %>
+
+      <%= f.label :content %>
+      <%= f.text_area :content,:rows => 5, :cols => 100 %>
+
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "form-control" %>
+
+      <%= f.label :status %>
+      <%= f.text_field :status, class: "form-control" %>
+
+      <%= f.label :keys %>
+      <%= f.text_field :keys, class: "form-control" %>
+
+      <%= f.submit "Create Product", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

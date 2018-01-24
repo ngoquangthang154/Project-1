@@ -296,3 +296,13 @@ input {
 .behclick-panel a:active {
   text-decoration: none;
 }
+
+/* validate product*/
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+

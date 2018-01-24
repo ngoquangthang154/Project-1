@@ -1,3 +1,3 @@
 class Typenew < ApplicationRecord
-  has_many :new
+  has_many :news
 end
