@@ -1,0 +1,40 @@
+en:
+  controllers:
+    show_product:
+      noproduct: "No any products"
+      notfoundproduct: "Product not found"
+      selected: "Product selected"
+      successproduct: "Product add success"
+      notexist: "Product not exist"
+      notdestroy: "product not destroy"
+  views:
+    show_product:
+      filter:
+        filtrade: "Filter by trademark"
+        filassort: "Filter by assort"
+        filmin: "Price min"
+        filmax: "Price max"
+        search: "Search"
+      cart:
+        title: "List of products you choose"
+        product: "Product"
+        price: "Price"
+        quantity: "Quantity"
+        subtotal: "Subtotal"
+        continue: "Continue Shopping"
+        total: "Total $ "
+        checkout: "Checkout"
+      detail:
+        title: "product detail"
+        cmt: "commented"
+        review: "reviews"
+        price: "current price:"
+        userby: "of buyers enjoyed this product!"
+        status : "status:"
+        oos: "Out of stock"
+        continue: "Continue Shopping"
+        addtocart: "Add to cart"
+      show:
+        title: "show product"
+        headtitle: "All product"
+        order: "Order"

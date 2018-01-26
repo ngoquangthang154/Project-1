@@ -1,0 +1,63 @@
+<h1><%= t "views.show_product.cart.title" %></h1>
+
+<div class="container">
+  <table id="cart" class="table-cart table-hover table-condensed">
+    <thead>
+      <tr>
+        <th style="width:50%"><%= t "views.show_product.cart.product" %></th>
+        <th style="width:10%"><%= t "views.show_product.cart.price" %></th>
+        <th style="width:8%"><%= t "views.show_product.cart.quantity" %></th>
+        <th style="width:22%" class="text-center"><%= t "views.show_product.cart.subtotal" %></th>
+        <th style="width:10%">
+          <%= link_to listcart_path, class: "btn btn-info btn-sm" do %>
+          <i class="fa fa-refresh"></i>
+          <% end %>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @product_cart.each do |pc| %>
+      <tr>
+        <td data-th="Product">
+          <div class="row">
+            <div class="col-sm-2 hidden-xs">
+              <%= image_tag(pc.img_detail, class: "img-responsive") %>
+            </div>
+            <div class="col-sm-10">
+              <h4 class="nomargin"><%= pc.name %></h4>
+              <p><%= pc.content %></p>
+            </div>
+          </div>
+        </td>
+        <td data-th="Price"><%= "$ #{pc.price}" %></td>
+        <td data-th="Quantity">
+          <input type="number" class="form-control text-center" value="<%= @cart[pc.id.to_s] %>">
+        </td>
+        <td data-th="Subtotal" class="text-center"><%= "$ #{total = pc.price * @cart[pc.id.to_s]}" %></td>
+        <td class="actions" data-th="">
+          <%= link_to destroycart_path(id: pc.id), class: "btn btn-danger btn-sm", remote: true, method: :post do %>
+          <i class="fa fa-trash-o"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% @total += total %>
+      <% end %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>
+          <%= link_to showp_path, class: "btn btn-warning" do %>
+          <i class="fa fa-angle-left"></i> <%= t "views.show_product.cart.continue" %>
+          <% end %>
+        </td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center">
+          <strong><%= "#{t "views.show_product.cart.total"}#{@total}" %></strong>
+        </td>
+        <td><a href="#" class="btn btn-success btn-block"><%= t "views.show_product.cart.checkout" %>
+          <i class="fa fa-angle-right"></i>
+        </a></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
