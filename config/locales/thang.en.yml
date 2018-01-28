@@ -1,0 +1,64 @@
+en:
+  controllers:
+    sessions_controller:
+      flash: "Invalid Username/password combination"
+    users_controller:
+      reg_success: "Register success"
+      reg_failed: "Register failed"
+      fail: "Fail"
+  views:
+    layout:
+      footer:
+        logo: "Free Shop"
+        home: "Home"
+        blog: "Blog"
+        pricing: "Pricing"
+        about: "About"
+        faq: "Faq"
+        contact: "Contact"
+        companyname: "Company Name"
+        add: "21 Revolution Street"
+        add2: "Paris, France"
+        phone: "+1 555 123456"
+        support: "support@company.com"
+        info: "About the company"
+        year: "2018"
+        info2: "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet."
+      header:
+        men: "Nam"
+        shirt_men: "Ao Nam"
+        trousers_men: "Quan Nam"
+        accessories_men: "Phu kien"
+        woman: "Nu"
+        shirt_woman: "Ao Nu"
+        trousers_woman: "Quan Nu"
+        accessories_woman: "Phu kien"
+        acc: "Account"
+        profile: "Profile"
+        settings: "Settings"
+        log_out: "Log out"
+        log_in: "Login"
+        sign_up: "SignUp"
+    sessions:
+      new:
+        log_in: "Log in"
+        sign_up: "Sign up now!"
+        newuser: "New user?"
+    shared:
+      error_mess:
+        error: "Error"
+        text: "The form contains"
+    users:
+      new:
+        create: "Create my account"
+      show:
+        username: "User Name"
+        name: "Name"
+        phone: "Phone"
+        email: "Email"
+        role_admin: "Admin"
+        role_user: "User"
+        role: "Role"
+        edit: "Edit"
+        back: "Back"
+
