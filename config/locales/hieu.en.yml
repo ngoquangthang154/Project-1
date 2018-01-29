@@ -1,0 +1,18 @@
+en:
+  messages:
+    success: "Successfully added product"
+    product_not_found: "Not find products"
+
+  products:
+    new:
+      title: "Add Products"
+      name: "Name Product"
+      trademark: "Trademark"
+      assort: "Assort"
+      picture: "Picture"
+      content: "Content"
+      price: "Price"
+      status: "Status"
+      keys: "Key"
+      create: "Create Product"
+

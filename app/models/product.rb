@@ -6,6 +6,20 @@ class Product < ApplicationRecord
   has_many :orderDetails
   has_many :rates
 
+  validates :name, presence: true, length: {maximum: Settings.maximum_name}
+  validates :content,presence: true
+  VALID_PRICE_REGEX = /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/
+  validates :price, presence: true,format: {with: VALID_PRICE_REGEX},uniqueness: {case_sensitive: false}
+  mount_uploader :img_detail, ImageUploader
+  validate :img_size
+
+  private
+  def img_size
+    if img_detail.size > 5.megabytes
+      errors.add :img_detail, Settings.img_size
+    end
+  end
+
   def self.search search
     if search
       where("name LIKE ? or keys LIKE ?", "%#{search}%", "%#{search}%")
