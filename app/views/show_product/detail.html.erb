@@ -66,14 +66,14 @@
         <li>
           <div class="comment-main-level">
             <div class="comment-avatar">
-              <img src="/assets/people.png" alt="">
+              <img src="/assets/user.png" alt="">
             </div>
             <div class="comment-box">
               <%= form_tag postcmt_path, :method => "post", class: "form-horizontal", :id => "product_coment" do %>
                 <%= hidden_field_tag :productid, @product.id %>
-                <%= hidden_field_tag :toid, @touser[:reply] %>
+                <%= hidden_field_tag :toid, @to_user[:reply] %>
                 <div class="form-group">
-                  <%= text_area_tag :cmt, "#{@touser[:name]}", rows: 5,
+                  <%= text_area_tag :cmt, "#{@to_user[:name]}", rows: 5,
                   placeholder: "#{t "views.show_product.detail.yourcmt"}" %>
                 </div>
                 <div class="form-group">
@@ -89,7 +89,7 @@
           <li id="coment_id_<%= cmt.id %>">
             <div class="comment-main-level">
               <div class="comment-avatar">
-                <img src="/assets/people.png" alt="">
+                <img src="/assets/user.png" alt="">
               </div>
               <div class="comment-box">
                 <div class="comment-head">
@@ -116,7 +116,7 @@
                 <% @product.comments.getlistcmt(cmt.id).each do |cmt_rep| %>
                   <li id="coment_id_<%= cmt_rep.id %>">
                     <div class="comment-avatar">
-                      <img src="/assets/people.png">
+                      <img src="/assets/user.png">
                     </div>
                     <div class="comment-box">
                       <div class="comment-head">

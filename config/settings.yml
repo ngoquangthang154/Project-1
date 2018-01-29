@@ -5,4 +5,4 @@ maximum_pass: 20
 maximum_name: 100
 img_size: should be less than 5MB
 
-per_index: 5
+per_index: 6

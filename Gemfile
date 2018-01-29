@@ -25,10 +25,7 @@ gem "kaminari"
 gem "ransack"
 gem "bootstrap-kaminari-views"
 gem "i18n-js"
-
-gem "kaminari"
-gem "ransack"
-gem "bootstrap-kaminari-views"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

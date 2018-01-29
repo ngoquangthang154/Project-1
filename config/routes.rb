@@ -23,16 +23,11 @@ Rails.application.routes.draw do
   post "checkout/", to: "show_product#checkout", as: "checkout"
 
   namespace :admin do
+    resources :searchs
     resources :products
-    get "show", to: "products#show", as: "show"
-    get "new", to: "products#new"
-    root "products#index"
-  end
-
-  namespace :admin do
-    resources :products
-    get "show", to: "products#show", as: "show"
-    get "new", to: "products#new"
+    resources :news
+    resources :trademarks
+    get "/admin/news/new", to: "admin/news#new", as: "newn"
     root "products#index"
   end
 end
