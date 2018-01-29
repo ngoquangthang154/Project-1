@@ -28,13 +28,12 @@ Rails.application.routes.draw do
     get "hisp/", to: "show_product#hisp", as: "hisp"
 
 
-    namespace :admin do
-      resources :searchs
-      resources :products
-      resources :news
-      resources :trademarks
-      get "/admin/news/new", to: "admin/news#new", as: "newn"
-      root "products#index"
-    end
+  namespace :admin do
+    resources :searchs
+    resources :products
+    resources :news
+    resources :trademarks
+    get "/admin/news/new", to: "admin/news#new", as: "newn"
+    root "products#index"
   end
 end

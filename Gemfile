@@ -31,10 +31,6 @@ gem "flag-icons-rails"
 gem "bootstrap-select-rails"
 gem "bootstrap-slider-rails"
 
-gem "kaminari"
-gem "ransack"
-gem "bootstrap-kaminari-views"
-
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "capybara", "~> 2.13"
