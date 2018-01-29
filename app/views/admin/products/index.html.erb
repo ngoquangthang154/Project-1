@@ -9,12 +9,15 @@
       </div>
       <div class="col-md-9">
         <div class="col-md-6 ">
-          <%= form_tag admin_products_path, :method => "get", class: "navbar-form navbar-left" do %>
+          <%= form_tag admin_products_path, :method => "get", class: "navbar-form navbar-left form-search" do %>
             <div class="form-group">
               <%= text_field_tag :search,params[:search], class: "search-product form-control", placeholder: "Search" %>
             </div>
               <%= submit_tag t("products.filter.search") , name: nil, class: "btn btn-default" %>
           <% end %>
+          <ul class="list-search">
+
+          </ul>
         </div>
         <div class="col-md-3 col-md-push-3">
           <button type="button" class="btn btn-default navbar-btn">

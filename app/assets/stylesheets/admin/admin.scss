@@ -26,3 +26,24 @@
 .image-show{
   width: 100px;
 }
+.form-search{
+  position:relative;
+}
+.list-search{
+  display:none;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background: $while-color;
+  padding:10px;
+}
+.list-search li{
+  list-style:none;
+  a{
+    color:40px;
+  }
+}
+

@@ -43,17 +43,17 @@ end
     )
 end
 
-20.times do |n|
+50.times do |n|
   ass_id  = 1
   tra_id  = 1
   name  = Faker::Name.name
   img_detail = "https://images-eu.ssl-images-amazon.com/images/I/51U9AUB2viL._AC_UL260_SR200,260_FMwebp_QL70_.jpg"
   content = "content nnnnnnn"
-  price = 5.5
+  price = Random.rand(1...100)
   status = 1
   keys = "#giay, #dep"
   star = 3.5
-  
+
   Product.create!(
     assort_id: ass_id,
     trademark_id: tra_id,
