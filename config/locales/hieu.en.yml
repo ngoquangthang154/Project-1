@@ -2,11 +2,36 @@ en:
   messages:
     success: "Successfully added product"
     product_not_found: "Not find products"
-
+    size_max: "Image size is grester than 5mb"
+  header:
+    profile: "Profile"
+    title: "Admin"
+    logout: "Logout"
+  save:
+    save: Save Change
   products:
+    show:
+      destroy_pr: "Your Delete"
+    filter:
+        filtrade: "Filter by trademark"
+        filassort: "Filter by assort"
+        filmin: "Price min"
+        filmax: "Price max"
+        search: "Search"
+    index:
+      title: "Form show products"
+      title2: "Striped Table with Hover"
+      submit: "Submit"
+      id: "ID"
+      name: "Name"
+      des: "Descriptiton"
+      price: "Price"
+      picture: "Picture"
+      action: "Action"
     new:
       title: "Add Products"
       name: "Name Product"
+      description: "Description"
       trademark: "Trademark"
       assort: "Assort"
       picture: "Picture"
@@ -15,4 +40,10 @@ en:
       status: "Status"
       keys: "Key"
       create: "Create Product"
-
+    flash:
+      update: "Successfully update product"
+      destroy: "Successfully delete product"
+    edit:
+      title: "Edit Products"
+    get_product:
+      check_nil: "Not find"

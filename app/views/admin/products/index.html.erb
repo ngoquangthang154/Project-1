@@ -1,0 +1,48 @@
+<% provide(:title, t("products.index.title"))%>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+  <div class="row">
+    <div class="header">
+      <div class="col-md-3">
+        <h4 class="title"><%= t "products.index.title2" %></h4>
+      </div>
+      <div class="col-md-9">
+        <div class="col-md-6 ">
+          <%= form_tag admin_products_path, :method => "get", class: "navbar-form navbar-left" do %>
+            <div class="form-group">
+              <%= text_field_tag :search,params[:search], class: "search-product form-control", placeholder: "Search" %>
+            </div>
+              <%= submit_tag t("products.filter.search") , name: nil, class: "btn btn-default" %>
+          <% end %>
+        </div>
+        <div class="col-md-3 col-md-push-3">
+          <button type="button" class="btn btn-default navbar-btn">
+            <%= link_to "",new_admin_product_path,class: "glyphicon glyphicon-plus" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th class="text-center"><%= t "products.index.id "%></th>
+          <th class="text-center"><%= t "products.index.name "%></th>
+          <th class="text-center"><%= t "products.index.des "%></th>
+          <th class="text-center"><%= t "products.index.price "%></th>
+          <th class="text-center"><%= t "products.index.picture "%></th>
+          <th class="text-center"><%= t "products.index.action "%></th>
+        </tr>
+      </thead>
+      <tbody>
+          <%= render partial: "product", collection: @product, as: "pr" %>
+      </tbody>
+    </table>
+    <%= paginate @product, theme: 'twitter-bootstrap-3' %>
+  </div>
+</div>
+  </div>
+</div>

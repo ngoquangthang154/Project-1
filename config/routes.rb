@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root "show_product#show"
-  get "sessions/new"
   get "session/new"
 
   resources :users
@@ -17,4 +16,10 @@ Rails.application.routes.draw do
   get "cart/", to: "show_product#cart", as: "listcart"
   post "cart/", to: "show_product#destroy", as: "destroycart"
 
+  namespace :admin do
+    resources :products
+    get "show", to: "products#show", as: "show"
+    get "new", to: "products#new"
+    root "products#index"
+  end
 end

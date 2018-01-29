@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+    <%= render "layouts/admin/layouts/rails_default" %>
+    <%= render "layouts/shim" %>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="main-panel">
+      <%= render "layouts/admin/layouts/header" %>
+        <div class="container">
+          <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+          <% end %>
+          <%= yield %>
+        </div>
+    </div>
+  </div>
+</body>
+</html>

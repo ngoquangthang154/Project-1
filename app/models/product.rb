@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :trademark
   belongs_to :assort
-
   has_many :comments
   has_many :orderDetails
   has_many :rates
