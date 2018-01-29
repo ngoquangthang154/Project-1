@@ -1,0 +1,33 @@
+<% provide :title, t("products.new.title") %>
+<h1><%= t("products.new.title") %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @product do |f| %>
+      <%= render "shared/error_messages" %>
+      <%= f.label :name, t("products.new.name") %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :trademark, t("products.new.trademark") %>
+      <%= f.collection_select :trademark_id, Trademark.all, :id, :name , { include_blank: false }, { class: "form-control" } %>
+
+      <%= f.label :assort, t("products.new.assort") %>
+      <%= f.collection_select :assort_id, Assort.all, :id, :name, { include_blank: false }, { class: "form-control" } %>
+
+      <%= f.label :picture, t("products.new.picture") %>
+      <%= f.file_field :img_detail,class: "form-control" %>
+
+      <%= f.label :content, t("products.new.content") %>
+      <%= f.text_area :content, rows: 5, cols: 100, class: "ckeditor" %>
+      <%= f.label :price, t("products.new.price") %>
+      <%= f.text_field :price, class: "form-control" %>
+
+      <%= f.label :status, t("products.new.status") %>
+      <%= f.text_field :status, class: "form-control" %>
+
+      <%= f.label :keys, t("products.new.keys") %>
+      <%= f.text_field :keys, class: "form-control" %>
+
+      <%= f.submit t("products.new.create"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
