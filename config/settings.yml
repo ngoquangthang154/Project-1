@@ -3,3 +3,5 @@ maximum_email: 50
 maximum_name: 50
 maximum_phone: 11
 maximum_pass: 20
+maximum_name: 100
+img_size: should be less than 5MB

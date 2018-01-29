@@ -14,4 +14,6 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require ckeditor/init
+//= require product
 //= require_tree .
