@@ -4,7 +4,8 @@ class ShowProductController < ApplicationController
 
   def show
     @product = Product.filtersearch(params[:search], params[:trademark],
-      params[:assort], params[:max], params[:min]).page(params[:page]).per(12).select :id, :name, :price, :img_detail, :keys, :trademark_id
+      params[:assort], params[:max], params[:min]).page(params[:page]).per(Settings.per_index).select :id, :name, :price,
+    :img_detail
     if session[:cart_p].nil?
       session[:cart_p] = {}
     end
