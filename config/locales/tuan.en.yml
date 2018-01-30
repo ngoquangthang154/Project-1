@@ -6,7 +6,9 @@ en:
       selected: "Product selected"
       successproduct: "Product add success"
       notexist: "Product not exist"
-      notdestroy: "product not destroy"
+      notdestroy: "Product not destroy"
+      error: "Have a error"
+      cmtto: "To: "
   views:
     show_product:
       filter:
@@ -34,6 +36,9 @@ en:
         oos: "Out of stock"
         continue: "Continue Shopping"
         addtocart: "Add to cart"
+        commenttitle: "commented of buyers"
+        yourcmt: "  Your Comment ..."
+        sendcmt: "Send your comment!"
       show:
         title: "show product"
         headtitle: "All product"
