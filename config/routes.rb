@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get "cart/", to: "show_product#cart", as: "listcart"
   post "cart/", to: "show_product#destroy", as: "destroycart"
 
+  post "postcomment/", to: "show_product#postcomment", as: "postcmt"
+  post "checkout/", to: "show_product#checkout", as: "checkout"
+
 end
