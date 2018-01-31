@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get "cart/", to: "show_product#cart", as: "listcart"
   post "cart/", to: "show_product#destroy", as: "destroycart"
 
+  get "news", to: "show_news#show", as: "news"
+  get "news/:id", to: "show_news#detail", as: "newd"
+
+  root "show_product#show"
 end

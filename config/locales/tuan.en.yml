@@ -6,7 +6,11 @@ en:
       selected: "Product selected"
       successproduct: "Product add success"
       notexist: "Product not exist"
-      notdestroy: "product not destroy"
+      notdestroy: "Product not destroy"
+      error: "Have a error"
+      cmtto: "To: "
+    show_news:
+      notnew: "News not found!"
   views:
     show_product:
       filter:
@@ -38,3 +42,11 @@ en:
         title: "show product"
         headtitle: "All product"
         order: "Order"
+    show_news:
+      show:
+        title: "Our Portfolio"
+        destitle: "If you don't have any thing do you can go here!"
+        choice: "Choice the type of news"
+        all: "All type"
+      detail:
+        lefttitle: "You may want to read"
