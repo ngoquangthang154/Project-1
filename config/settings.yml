@@ -1,0 +1,5 @@
+maximum_username: 30
+maximum_email: 50
+maximum_name: 50
+maximum_phone: 11
+maximum_pass: 20

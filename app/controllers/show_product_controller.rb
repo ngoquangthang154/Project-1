@@ -14,18 +14,6 @@ class ShowProductController < ApplicationController
 
   def detail
     @product =  Product.getdetail(params[:id])
-    idcmt = params[:id_cmt]
-    @touser = {
-      name: "",
-      reply: 0
-    }
-    if !idcmt.nil?
-      @touser[:name] = "<[To: #{@product.comments.find_by_id(idcmt).user.name}]>\n"
-      @touser[:reply] = idcmt
-      if @product.comments.find_by_id(idcmt).reply != 0
-        @touser[:reply] = @product.comments.find_by_id(idcmt).reply
-      end
-    end
     if @product.nil?
       flash[:danger] = t "controllers.show_product.notfoundproduct"
       redirect_to showp_url
@@ -76,30 +64,6 @@ class ShowProductController < ApplicationController
       @temp.delete(@id_p)
       session[:cart_p] = @temp
       redirect_to listcart_url
-    end
-  end
-
-  def postcomment
-    comment_user = params[:cmt]
-    id_p = params[:productid]
-    toid = params[:toid]
-
-    if comment_user.nil? || id_p.nil? || !/\A\d+\z/.match(id_p)
-      flash[:danger] = t "controllers.show_product.error"
-      redirect_to listcart_url
-    else
-      comment = Comment.new(
-        user_id: 1,
-        product_id: id_p,
-        comment: comment_user,
-        time_cmt: Time.now,
-        reply: toid
-        )
-      if comment.save
-        if toid == 0 ? tickcmt = "#coment_id" : tickcmt = "#coment_id_#{toid}"
-        end
-        redirect_to request.referrer.sub("?#{URI(request.referrer).query}",tickcmt)
-      end
     end
   end
 
