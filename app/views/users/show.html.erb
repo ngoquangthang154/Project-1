@@ -1,0 +1,33 @@
+<div class="col-md-offset-3">
+  <div class="input-group user-info col-xs-6" >
+    <span class="input-group-addon"><%= t "views.users.users.username"%></span>
+    <span class="form-control"><%= @user.username %></span>
+  </div>
+
+  <div class="input-group user-info col-xs-6">
+    <span class="input-group-addon"><%= t "views.users.users.name" %></span>
+    <span class="form-control"><%= @user.name %></span>
+  </div>
+
+  <div class="input-group user-info col-xs-6">
+    <span class="input-group-addon"><%= t "views.users.users.phone" %></span>
+    <span class="form-control"><%= @user.phone %></span>
+  </div>
+
+  <div class="input-group user-info col-xs-6">
+    <span class="input-group-addon"><%= t "views.users.users.email" %></span>
+    <span class="form-control"><%= @user.email %></span>
+  </div>
+
+  <div class="input-group user-info col-xs-6">
+   <span class="input-group-addon"><%= t "views.users.users.role" %></span>
+   <% if @user.role == 1%>
+      <span class="form-control"><%= t "views.users.users.role_admin"  %></span>
+    <% else %>
+      <span class="form-control"><%= t "views.users.show.role_user"  %></span>
+    <% end %>
+  </div>
+
+  <%= link_to t("views.users.show.edit"), edit_user_path(@user), class: "btn btn-primary"%>
+  <%= link_to t("views.users.show.back"), root_path, class: "btn btn-primary" %>
+</div>
