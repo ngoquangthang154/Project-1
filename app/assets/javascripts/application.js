@@ -19,4 +19,5 @@
 //= require i18n.js
 //= require i18n/translations
 //= require bootstrap-select
+//= require search-box.js
 //= require_tree .
