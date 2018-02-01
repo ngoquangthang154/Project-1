@@ -1,193 +1,119 @@
-<div class="container">
-	<div class="header_top">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="header_top_left float-left">
-					<ul class="social_icon">
-						<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-					<ul class="social_others">
-						<li><a><i class="fa fa-phone"></i>012345678</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i>admin.com</a></li>
-						<li class="language_icon">
-							<select class="selectpicker language_icon" data-width="fit">
-							    <option data-content='<i class="flag-icon flag-icon-vn"></i> VietNam'>VietNam</option>
-							  <option  data-content='<i class="flag-icon flag-icon-us"></i> English'>English</option>
-							</select>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="header_top_right text-right">
-					<ul>
-						<li><a href="#">Account</a></li>
-						<li><a href="#">Wishlist</a></li>
-						<li>
-						<%= link_to t("views.layout.header.log_in"), login_path %></li>
-						<li class="searchbox">
-							<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-							<input type="submit" class="searchbox-submit" value="">
-							<span class="searchbox-icon"><i class="fa fa-search"></i></span>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row mega_relative">
-		<div class="col-xs-12 col-sm-2">
-			<div class="logo head_lo">
-				<%= link_to image_tag("logo.png", alt: "logo"), root_path%>
-			</div>
-		</div>
-		<div class="col-sm-10">
-			<div class="mainmenu float-right">
-				<nav>
-					<ul id="menu-top">
-						<li><a href="index.html">HOME</a></li>
-						<li><a href="#">NEW</a></li>
-						<li><a href="#">FEATURED</a></li>
-						<li><a href="#">BLOG</a></li>
-						<li><a href="#">BRAND</a></li>
-						<li><a href="#">OFFERS</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
-                        <%= render "thumb_cart" %>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</div>
+<div class="container ">
+  <div class="header_top">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="header_top_left float-left">
+          <ul class="social_icon">
+            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          </ul>
+          <ul class="social_others">
+            <li><a><i class="fa fa-phone"></i>012345678</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"></i>admin.com</a></li>
+            <li class="language_icon">
+            <select class="selectpicker language_icon" data-width="fit">
+              <option data-content='<i class="flag-icon flag-icon-vn"></i> VietNam'>VietNam</option>
+              <option  data-content='<i class="flag-icon flag-icon-us"></i> English'>English</option>
+            </select>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="header_top_right text-right">
+          <ul>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Wishlist</a></li>
+            <li><a data-toggle="modal" data-target="#myModal"> Login</a></li>
+            <li class="searchbox">
+              <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+              <input type="submit" class="searchbox-submit" value="">
+              <span class="searchbox-icon"><i class="fa fa-search"></i></span>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mega_relative">
+    <div class="col-xs-12 col-sm-2">
+      <div class="logo head_lo">
+      <%= link_to image_tag("logo.png", alt: "logo"), root_path%>
+      </div>
+    </div>
+    <div class="col-sm-10">
+      <div class="mainmenu float-right">
+      <nav>
+        <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#">NEW</a></li>
+        <li><a href="#">FEATURED</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">BRAND</a></li>
+        <li><a href="#">OFFERS</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+        <li class="shop_icon">
+          <%= link_to image_tag("menu_icon_img.png", alt: "logo")%>
+          <span>10</span>
+        </li>
+        </ul>
+      </nav>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Large modal -->
-<p class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-    Login modal</p>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×</button>
-                <h4 class="modal-title" id="myModalLabel">
-                    Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a></h4>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs">
-                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="Login">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="submit" class="btn btn-primary btn-sm">
-                                            Submit</button>
-                                        <a href="javascript:;">Forgot your password?</a>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="Registration">
-                                <form role="form" class="form-horizontal">
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Name</label>
-                                    <div class="col-sm-10">
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <select class="form-control">
-                                                    <option>Mr.</option>
-                                                    <option>Ms.</option>
-                                                    <option>Mrs.</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Name" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-sm-2 control-label">
-                                        Email</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" placeholder="Email" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mobile" class="col-sm-2 control-label">
-                                        Mobile</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="mobile" placeholder="Mobile" />
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password" class="col-sm-2 control-label">
-                                        Password</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="password" placeholder="Password" />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-2">
-                                    </div>
-                                    <div class="col-sm-10">
-                                        <button type="button" class="btn btn-primary btn-sm">
-                                            Save & Continue</button>
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            Cancel</button>
-                                    </div>
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div id="OR" class="hidden-xs">
-                            OR</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row text-center sign-with">
-                            <div class="col-md-12">
-                                <h3>
-                                    Sign in with</h3>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="btn-group btn-group-justified">
-                                    <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-                                        Google</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×</button>
+        <h4 class="modal-title" id="myModalLabel">
+          Login/Registration</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8 popup_title" >
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+              <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="Login">
+                <div class="col-md-10 col-md-offset-3 popup_login">
+                  <%= render "sessions/form" %>
                 </div>
+              </div>
+              <div class="tab-pane" id="Registration">
+              <%= render partial: "users/form" %>
+              </div>
             </div>
+            <div id="OR" class="hidden-xs">
+              OR</div>
+          </div>
+          <div class="col-md-4">
+            <div class="row text-center sign-with">
+              <div class="col-md-12">
+                <h3>
+                  Sign in with</h3>
+              </div>
+              <div class="col-md-12">
+                <div class="btn-group btn-group-justified">
+                  <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                    Google</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>

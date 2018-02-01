@@ -29,6 +29,7 @@ gem "font-awesome-rails"
 gem "jquery-turbolinks"
 gem "flag-icons-rails"
 gem "bootstrap-select-rails"
+gem "bootstrap-slider-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

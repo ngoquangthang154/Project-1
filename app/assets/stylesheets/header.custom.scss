@@ -24,7 +24,6 @@ h1, h2, h5, a, .header_top_right ul li a:hover,.mainmenu a:hover, .choose_text:h
   color:#3a4b60;
 }
 .social_icon li a:hover i,.slide_btn:hover,.shop_now_btn:hover,.searchbox-open span,.choose_title h2,.choose_text h5  a,.choose_btn .shop_now_btn,.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover,.nav-tabs li a:hover,.footer_link p,#scrollUp i,.dark_product h1,.footer_link li a,.address li{
-  color:#fff;
 }
 .header_top_left ul li ,.header_top_right ul li ,.social_icon,.social_others,.mainmenu li,.footer_icon li,.slide_btn,.shop_now_btn,.choose_text,.choose_text i,.nav.nav-tabs.items_ul,button.checkPageBtn,a.checkPageBtn {
   display: inline-block;
@@ -107,7 +106,9 @@ body {
 /*-----------------------------------------
 [2.1 Header-Top ]
 ------------------------------------------*/
-.header_top {border-bottom: 1px solid #E3E3E3;}
+.header_top {
+  border-bottom: 1px solid #E3E3E3;
+}
 /*--------------------------------
 [2.1.1 Header-Top-Left ]
 ---------------------------------*/

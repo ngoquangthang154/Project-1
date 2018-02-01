@@ -1,88 +1,88 @@
 <section class="container">
-	<div class="prod-wrap">
-		<div class="card-p-d">
-			<div class="container-fliud">
-				<div class="wrapper row">
-					<div class="preview-p-d col-md-6">
-						<div class="preview-pic tab-content-p-d tab-pane active">
-							<img class="img-product-detail" src="<%= @product.img_detail %>" />
-						</div>
-					</div>
-					<div class="details-product col-md-6">
-						<h3 class="product-title-detail"><%= @product.name %></h3>
-						<div class="rating">
-							<div class="stars">
-								<% for i in 0...5 %>
-								<% if i+1 < @product.rates.average(:rate).to_f %>
-								<span class="fa fa-star checked"></span>
-								<%elsif (@product.rates.average(:rate).to_f - @product.rates.average(:rate).to_i).abs > 0 && @product.rates.average(:rate).to_i == i %>
-								<span class="fa fa-star-half-o checked"></span>
-								<%else%>
-								<span class="fa fa-star "></span>
-								<% end %>
-								<% end %>
-							</div>
-							<br/>
-							<span class="review-no badge"><%= "#{@product.rates.size} #{t "views.show_product.detail.review"}" %></span>
-							<a href="#coment_id" class="label label-info">
-								<span class="glyphicon glyphicon-comment"></span> <%= "#{@countcmt.size} #{t "views.show_product.detail.cmt"}" %>
-							</a>
-						</div>
-						<p class="product-description"><%= @product.content %></p>
-						<h4 class="price-p-d"> <%= t "views.show_product.detail.price" %>
-							<span>$<%= @product.price %></span>
-						</h4>
-						<h7 class="keywork-title-p-d">Key work:
-							<span class="keyworks"><%= @product.keys %></span>
-						</h7>
-						<h5 class="status-p-d"><%= t "views.show_product.detail.status" %>
-							<% if @product.count == 0 %>
-							<span class="stock"><%= t "views.show_product.detail.oos" %></span>
-							<% else %>
-							<span class="stock">Con hang</span>
-							<% end %>
-						</h5>
-						<div class="action">
-							<%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default" do %>
-							<%= t "views.show_product.detail.addtocart" %>
-							<% end %>
-							<%= link_to showp_path, class: "text-center back-to-show btn btn-default" do %>
-							<%= t "views.show_product.detail.continue" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="prod-wrap">
+    <div class="card-p-d">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview-p-d col-md-6">
+            <div class="preview-pic tab-content-p-d tab-pane active">
+              <img class="img-product-detail" src="<%= @product.img_detail %>" />
+            </div>
+          </div>
+          <div class="details-product col-md-6">
+            <h3 class="product-title-detail"><%= @product.name %></h3>
+            <div class="rating">
+              <div class="stars">
+                <% for i in 0...5 %>
+                <% if i+1 < @product.rates.average(:rate).to_f %>
+                <span class="fa fa-star checked"></span>
+                <%elsif (@product.rates.average(:rate).to_f - @product.rates.average(:rate).to_i).abs > 0 && @product.rates.average(:rate).to_i == i %>
+                <span class="fa fa-star-half-o checked"></span>
+                <%else%>
+                <span class="fa fa-star "></span>
+                <% end %>
+                <% end %>
+              </div>
+              <br/>
+              <span class="review-no badge"><%= "#{@product.rates.size} #{t "views.show_product.detail.review"}" %></span>
+              <a href="#coment_id" class="label label-info">
+                <span class="glyphicon glyphicon-comment"></span> <%= "#{@countcmt.size} #{t "views.show_product.detail.cmt"}" %>
+              </a>
+            </div>
+            <p class="product-description"><%= @product.content %></p>
+            <h4 class="price-p-d"> <%= t "views.show_product.detail.price" %>
+              <span>$<%= @product.price %></span>
+            </h4>
+            <h7 class="keywork-title-p-d">Key work:
+              <span class="keyworks"><%= @product.keys %></span>
+            </h7>
+            <h5 class="status-p-d"><%= t "views.show_product.detail.status" %>
+              <% if @product.count == 0 %>
+              <span class="stock"><%= t "views.show_product.detail.oos" %></span>
+              <% else %>
+              <span class="stock">Con hang</span>
+              <% end %>
+            </h5>
+            <div class="action">
+              <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default" do %>
+              <%= t "views.show_product.detail.addtocart" %>
+              <% end %>
+              <%= link_to showp_path, class: "text-center back-to-show btn btn-default" do %>
+              <%= t "views.show_product.detail.continue" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-	<div class="prod-related">
-		<h2><span>Related products</span></h2>
-		<div class="prod-related-car" id="prod-related-car">
-			<ul class="slides">
-				<li class="prod-rel-wrap">
-					<% @list.each do |item| %>
-					<div class="prod-rel">
-						<a href="product.html" class="prod-rel-img">
-							<img src="<%= item.img_detail %>" alt="">
-						</a>
-						<div class="prod-rel-cont">
-							<h3>
-								<%= link_to item.name, detailp_path(item)%>
-							</h3>
-							<p class="prod-rel-price">
-								<b>$<%= item.price %></b>
-							</p>
-							<div class="prod-rel-actions">
-								<p class="prod-i-addwrap">
-									<a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<% end %>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="prod-related">
+    <h2><span>Related products</span></h2>
+    <div class="prod-related-car" id="prod-related-car">
+      <ul class="slides">
+        <li class="prod-rel-wrap">
+          <% @list.each do |item| %>
+          <div class="prod-rel">
+            <a href="product.html" class="prod-rel-img">
+              <img src="<%= item.img_detail %>" alt="">
+            </a>
+            <div class="prod-rel-cont">
+              <h3>
+                <%= link_to item.name, detailp_path(item)%>
+              </h3>
+              <p class="prod-rel-price">
+                <b>$<%= item.price %></b>
+              </p>
+              <div class="prod-rel-actions">
+                <p class="prod-i-addwrap">
+                  <a title="Add to cart" href="#" class="prod-i-add"><i class="fa fa-shopping-cart"></i></a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>
