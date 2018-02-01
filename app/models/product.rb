@@ -11,7 +11,6 @@ class Product < ApplicationRecord
   validates :price, presence: true,format: {with: VALID_PRICE_REGEX}
   # mount_uploader :img_detail, ImageUploader
   # validate :img_size
-
   scope :getlist, -> (id){order(created_at: :desc).where.not(id: id).limit(3).select :id, :name, :img_detail, :price}
 
   private

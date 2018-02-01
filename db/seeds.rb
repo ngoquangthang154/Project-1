@@ -52,7 +52,6 @@ end
   price = Random.rand(1...100)
   status = 1
   keys = "#giay, #dep"
-
   Product.create!(
     assort_id: ass_id,
     trademark_id: tra_id,
