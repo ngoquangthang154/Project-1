@@ -1,7 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :trademark
   belongs_to :assort
-
   has_many :comments
   has_many :orderDetails
   has_many :rates
@@ -9,7 +8,8 @@ class Product < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.maximum_name}
   validates :content,presence: true
   VALID_PRICE_REGEX = /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/
-  validates :price, presence: true,format: {with: VALID_PRICE_REGEX},uniqueness: {case_sensitive: false}
+  validates :price, presence: true,
+    format: {with: VALID_PRICE_REGEX}
   mount_uploader :img_detail, ImageUploader
   validate :img_size
 

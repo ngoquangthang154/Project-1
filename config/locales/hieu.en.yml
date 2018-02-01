@@ -2,11 +2,15 @@ en:
   messages:
     success: "Successfully added product"
     product_not_found: "Not find products"
-
+  save:
+    save: Save Change
   products:
+    index:
+      title: "Form show products"
     new:
       title: "Add Products"
       name: "Name Product"
+      description: "Description"
       trademark: "Trademark"
       assort: "Assort"
       picture: "Picture"
@@ -15,4 +19,8 @@ en:
       status: "Status"
       keys: "Key"
       create: "Create Product"
-
+    flash:
+      update: "Successfully update product"
+      destroy: "Successfully delete product"
+    edit:
+      title: "Edit Products"

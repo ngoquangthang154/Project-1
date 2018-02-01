@@ -11,12 +11,13 @@ arrTrademark.each do |at|
 end
 
 User.create!(
-  username: "admin",
-  password: "1",
+  username: "adminpro",
+  password: "adminpro",
   name:  "my admin",
   email: "admin1234@gmail.com",
   phone: "01888888888",
-  role: 0
+  role: 0,
+  admin: true
   )
 
 5.times do |n|
@@ -30,7 +31,7 @@ end
   username = "user#{n+1}"
   password = "1"
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "example#{n+1}@railstutorial.org"
   phone = "0199999999"
   User.create!(
     username: username,
@@ -52,6 +53,7 @@ end
   status = 1
   keys = "#giay, #dep"
   star = 3.5
+  
   Product.create!(
     assort_id: ass_id,
     trademark_id: tra_id,
