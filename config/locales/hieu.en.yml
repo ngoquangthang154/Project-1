@@ -7,17 +7,19 @@ en:
     profile: "Profile"
     title: "Admin"
     logout: "Logout"
+    news: "News"
+    products: "Products"
   save:
     save: Save Change
   products:
     show:
       destroy_pr: "Your Delete"
     filter:
-        filtrade: "Filter by trademark"
-        filassort: "Filter by assort"
-        filmin: "Price min"
-        filmax: "Price max"
-        search: "Search"
+      filtrade: "Filter by trademark"
+      filassort: "Filter by assort"
+      filmin: "Price min"
+      filmax: "Price max"
+      search: "Search"
     index:
       title: "Form show products"
       title2: "Striped Table with Hover"
@@ -40,6 +42,7 @@ en:
       status: "Status"
       keys: "Key"
       create: "Create Product"
+      success: "Successfully added product"
     flash:
       update: "Successfully update product"
       destroy: "Successfully delete product"

@@ -7,7 +7,7 @@ class Admin::ProductsController < Admin::BaseController
   def show
     return if @product
     flash["success"] = t "messages.notproduct"
-    redirect_to showp_path
+    redirect_to show_path
   end
 
   def new
@@ -48,6 +48,7 @@ class Admin::ProductsController < Admin::BaseController
       redirect_to admin_root_path
     end
   end
+
   def product_params
     params.require(:product).permit :name, :img_detail,
       :trademark_id,:assort_id, :content, :description , :price, :status, :keys
