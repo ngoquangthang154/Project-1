@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180131030105) do
+ActiveRecord::Schema.define(version: 20180129150913) do
 
   create_table "assorts", force: :cascade do |t|
     t.string "name"
@@ -105,7 +105,6 @@ ActiveRecord::Schema.define(version: 20180131030105) do
     t.float "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
     t.index ["assort_id", "created_at"], name: "index_products_on_assort_id_and_created_at"
     t.index ["assort_id"], name: "index_products_on_assort_id"
     t.index ["trademark_id", "created_at"], name: "index_products_on_trademark_id_and_created_at"
