@@ -2,16 +2,16 @@
   <nav class="navbar navbar-default navigation-clean-search">
     <div class="container">
       <div class="navbar-header">
-        <a class="navbar-brand navbar-link" href="#"><%= t "views.layout.footer.logo"%></a>
+        <%= link_to t("views.layout.footer.logo"), root_path, class: "navbar-brand navbar-link" %>
       </div>
       <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav navbar-nav">
+<!--         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><%= t "views.layout.header.men"%><span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-          <li role="presentation"><a href="#"><%= t "views.layout.header.shirt_men"%></a></li>
-                <li role="presentation"><a href="#"><%= t "views.layout.header.trousers_men"%></a></li>
-                <li role="presentation"><a href="#"><%= t "views.layout.header.accessories_men"%></a></li>
+              <li role="presentation"><a href="#"><%= t "views.layout.header.shirt_men"%></a></li>
+              <li role="presentation"><a href="#"><%= t "views.layout.header.trousers_men"%></a></li>
+              <li role="presentation"><a href="#"><%= t "views.layout.header.accessories_men"%></a></li>
             </ul>
           </li>
           <li class="dropdown">
@@ -22,7 +22,7 @@
               <li role="presentation"><a href="#"><%= t "views.layout.header.accessories_woman"%></a></li>
             </ul>
           </li>
-        </ul>
+        </ul> -->
         <% if logged_in? %>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -33,16 +33,29 @@
                   <%= link_to t("views.layout.header.profile"), current_user %>
                 </li>
                 <li role="presentation">
-                  <%= link_to t("views.layout.header.settings"), "#" %>
+                  <%= link_to t("views.layout.header.settings"), edit_user_path(current_user) %>
                 </li>
-                <li><%= link_to t("views.layout.header.log_out"), logout_path, method: :delete %></li>
+                <li role="presentation">
+                  <%= link_to t("views.layout.header.show_all_user"), "#" %>
+                </li>
+                <li><%= link_to t("views.layout.header.log_out"), logout_path, method: :delete %>
+                </li>
               </ul>
             </li>
           </ul>
         <% else %>
           <ul class="nav navbar-nav navbar-right login_logout">
-            <%= link_to t("views.layout.header.log_in"), login_path, class: "navbar-link login" %>
-            <%= link_to t("views.layout.header.sign_up"), signup_path, :class => "btn btn-default action-button"%>
+            <%= link_to t("views.layout.header.log_in"), login_path, class: "btn btn-default action-button" %>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default action-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t "views.layout.header.language"%>
+              </button>
+              <div class="dropdown-menu">
+                <li><%= link_to t("views.layout.header.vi"), class: "dropdown-item"%>
+                </li>
+                <li><%= link_to t("views.layout.header.en"), class: "dropdown-item"%>
+                </li>
+              </div>
+            </div>
           </ul>
         <% end %>
       </div>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "news/:id", to: "show_news#detail", as: "newd"
 
   resources :users
+  get "/users", to: "users#index"
   get "/signup", to: "users#new"
   get "/showu", to: "users#show", as: "showu"
   get "/login", to: "sessions#new"
@@ -28,4 +29,10 @@ Rails.application.routes.draw do
     root "products#index"
   end
 
+  namespace :admin do
+    resources :products
+    get "show", to: "products#show", as: "show"
+    get "new", to: "products#new"
+    root "products#index"
+  end
 end
