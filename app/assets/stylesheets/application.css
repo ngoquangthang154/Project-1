@@ -10,10 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require dataTables/extras/dataTables.responsive
+ *= require dataTables/jquery.dataTables.foundation
+ *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require dataTables/jquery.dataTables
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require dataTables/src/demo_table_jui
  *= require_self
  *= require font-awesome
  *= require flag-icon
  *= require bootstrap-select
  *= require bootstrap-slider
+ *= require_tree .
  */

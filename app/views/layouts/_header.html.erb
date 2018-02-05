@@ -36,6 +36,7 @@
         <% else %>
           <ul class="nav navbar-nav navbar-right login_logout">
             <%= link_to t("views.layout.header.log_in"), login_path, class: "btn btn-default action-button" %>
+            <%= link_to t("News"), login_path, class: "btn btn-default action-button" %>
             <div class="btn-group">
               <button type="button" class="btn btn-default action-button dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t "views.layout.header.language"%>
               </button>

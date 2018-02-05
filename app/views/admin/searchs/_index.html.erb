@@ -1,3 +1,16 @@
-<% @searchs.each do |s| %>
-<li><%= link_to s.name ,admin_products_path(id: s.id) %></li>
+<% @searchs.each do |pr| %>
+<tr>
+  <td class="text-center"><%= pr.id %></td>
+  <td class="text-center"><%= pr.name %></td>
+  <td class="text-center"><%= pr.description %></td>
+  <td class="text-center"><%= raw(pr.content) %></td>
+  <td class="text-center"><%= pr.price %> $</td>
+  <td class="text-center"><%= image_tag pr.img_detail,class: "image-show" %></td>
+  <td class="text-center">
+      <%= link_to "",edit_admin_product_path(pr),class: "glyphicon glyphicon-pencil btn btn-primary" %>
+      <%= link_to "",[:admin, pr], method: :delete,data: {confirm: t("products.show.destroy_pr")},class: "btn btn-danger glyphicon glyphicon-remove-sign" %>
+  </td>
+</tr>
+
+
 <% end %>

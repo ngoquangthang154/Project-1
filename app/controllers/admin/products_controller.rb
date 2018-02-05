@@ -1,7 +1,8 @@
 class Admin::ProductsController < Admin::BaseController
-  before_action :get_product, except: [:index, :new]
+  before_action :get_product, except: [:index, :new, :create]
   def index
-    @product = Product.search(params[:search]).page(params[:page]).per Settings.per_index
+    # @product = Product.search(params[:search]).page(params[:page]).per Settings.per_index
+    @product = Product.all
   end
 
   def show
@@ -12,6 +13,9 @@ class Admin::ProductsController < Admin::BaseController
 
   def new
     @product = Product.new
+    respond_to do |format|
+      format.js {}
+    end
   end
 
   def create

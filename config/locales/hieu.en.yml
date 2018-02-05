@@ -22,10 +22,11 @@ en:
       search: "Search"
     index:
       title: "Form show products"
-      title2: "Striped Table with Hover"
+      title2: "Table Products"
       submit: "Submit"
       id: "ID"
       name: "Name"
+      content: "Content"
       des: "Descriptiton"
       price: "Price"
       picture: "Picture"

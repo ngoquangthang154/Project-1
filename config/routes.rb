@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  scope "(:locale)", :locale => /en|vi/ do
-    mount Ckeditor::Engine => '/ckeditor'
+    scope "(:locale)", :locale => /en|vi/ do
+    mount Ckeditor::Engine => "/ckeditor"
     root "show_product#show"
     get "session/new"
     get "news", to: "show_news#show", as: "news"
@@ -32,7 +32,15 @@ Rails.application.routes.draw do
       resources :products
       resources :news
       resources :trademarks
-      get "/admin/news/new", to: "admin/news#new", as: "newn"
+      resources :assorts
+      resources :menus
+      resources :typenews
+      resources :users
+      resources :profiles
+      resources :sessions
+      get "/login", to: "sessions#new"
+      post "/login",   to: "sessions#create"
+      delete "/logout", to: "sessions#destroy"
       root "products#index"
     end
   end

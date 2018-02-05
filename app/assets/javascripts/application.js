@@ -12,6 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/extras/dataTables.responsive
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.foundation
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require dataTables/jquery.dataTables
+//= require jquery.turbolinks
+//= require turbolinks
+//= require turbolinks-compatibility
 //= require rails-ujs
 //= require turbolinks
 //= require ckeditor/init
