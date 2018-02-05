@@ -104,7 +104,6 @@ ActiveRecord::Schema.define(version: 20180131030105) do
     t.float "star"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "description"
     t.index ["assort_id", "created_at"], name: "index_products_on_assort_id_and_created_at"
     t.index ["assort_id"], name: "index_products_on_assort_id"
     t.index ["trademark_id", "created_at"], name: "index_products_on_trademark_id_and_created_at"

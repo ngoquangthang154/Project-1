@@ -1,0 +1,43 @@
+<div class="container-fluid news-blog">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="page-header">
+        <h1><%= @new.title %></h1>
+      </div>
+      <div class="col-sm-8 col-md-8">
+        <div class="thumbnail principal-post">
+          <img src="<%= @new.img_thumb %>">
+          <div class="caption-new">
+            <br>
+            <span class="date-of-post">
+              <%= @new.day_create.to_date %> -
+              <i class="glyphicon glyphicon-tag"></i> Tags :
+              <%= link_to news_path(type_id: @new.typenew.id) do %>
+              <span class="label label-info">
+                <%= @new.typenew.name %>
+              </span>
+              <% end %>
+            </span>
+            <br>
+            <br>
+            <strong><p><%= @new.description %></p></strong>
+            <%= @new.content %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <%= t "views.show_news.detail.lefttitle" %>
+      <% @list.each do |item| %>
+      <div class="thumbnail">
+        <%= link_to newd_path(item.id) do %>
+          <div class="caption-new">
+            <h4><%= item.title %></h4>
+          </div>
+        <% end %>
+        <span class="date-of-post"><%= item.day_create %></span>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

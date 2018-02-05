@@ -6,7 +6,16 @@ en:
       selected: "Product selected"
       successproduct: "Product add success"
       notexist: "Product not exist"
+      notdestroy: "Product not destroy"
+      error: "Have a error"
       notdestroy: "product not destroy"
+      error: "Have a error"
+      cmtto: "To: "
+      successorder: "Your order success!"
+      logintocmt: "You need login to commented"
+      logintoorder: "You need login to order"
+  show_news:
+      notnew: "News not found!"
   views:
     show_product:
       filter:
@@ -34,7 +43,31 @@ en:
         oos: "Out of stock"
         continue: "Continue Shopping"
         addtocart: "Add to cart"
+        commenttitle: "commented of buyers"
+        yourcmt: "  Your Comment ..."
+        sendcmt: "Send your comment!"
       show:
         title: "show product"
         headtitle: "All product"
         order: "Order"
+      checkout:
+        title: "Check out!"
+        close: "Close"
+        send: "Send!"
+        content: "Content"
+        adress: "Adress"
+        phone: "Phone"
+        price: "Price"
+        dothurs: "Delivery on Thursday"
+        dofri: "Delivery on Friday"
+        yourcont: "Your content"
+        youradr: "Your adress"
+        yourphone: "Your phone"
+    show_news:
+      show:
+        title: "Our Portfolio"
+        destitle: "If you don't have any thing do you can go here!"
+        choice: "Choice the type of news"
+        all: "All type"
+      detail:
+        lefttitle: "You may want to read"
