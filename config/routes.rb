@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   resources :products
   get "show", to: "show_product#show", as: "showp"
   get "show/:id", to: "show_product#detail", as: "detailp"
+  post "show/:id", to: "show_product#detail", as: "reply"
   get "cart/", to: "show_product#cart", as: "listcart"
   post "cart/", to: "show_product#destroy", as: "destroycart"
+  post "postcomment/", to: "show_product#postcomment", as: "postcmt"
+  post "checkout/", to: "show_product#checkout", as: "checkout"
 
   get "news", to: "show_news#show", as: "news"
   get "news/:id", to: "show_news#detail", as: "newd"

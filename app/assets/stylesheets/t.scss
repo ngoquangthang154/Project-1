@@ -1,3 +1,10 @@
+body {
+  font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+  background: #dee1e3;
+  padding-top: 50px;
+  overflow-x: hidden;
+}
+
 .row-product {
   padding-top: 25px;
 }
@@ -577,7 +584,6 @@ body {
   border-radius: 3px;
 }
 
-
 @media only screen and (max-width:766px) {
   .comments-container {
     width: 480px;
@@ -592,4 +598,3 @@ body {
   }
 
 }
-
