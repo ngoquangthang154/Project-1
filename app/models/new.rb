@@ -9,7 +9,7 @@ class New < ApplicationRecord
   private
   def self.search search
     if search
-      where("name LIKE ? or keys LIKE ?", "%#{search}%", "%#{search}%")
+      where("title LIKE ? or description LIKE ? or content LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%")
     else
       all
     end
