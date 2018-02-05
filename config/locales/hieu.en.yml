@@ -3,6 +3,7 @@ en:
     success: "Successfully added product"
     product_not_found: "Not find products"
     size_max: "Image size is grester than 5mb"
+    ss_login: "Admin login"
   header:
     profile: "Profile"
     title: "Admin"

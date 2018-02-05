@@ -28,7 +28,7 @@
               <span class="glyphicon glyphicon-comment"></span> <%= "#{@countcmt.size} #{t "views.show_product.detail.cmt"}" %>
             </a>
           </div>
-          <p class="product-description"><%= @product.content %></p>
+          <p class="product-description"><%= raw(@product.content) %></p>
           <h4 class="price-p-d"> <%= t "views.show_product.detail.price" %>
             <span>$<%= @product.price %></span>
           </h4>

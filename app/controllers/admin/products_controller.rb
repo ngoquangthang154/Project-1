@@ -1,5 +1,6 @@
 class Admin::ProductsController < Admin::BaseController
   before_action :get_product, except: [:index, :new]
+  before_action :check_admin_login, only: [:index, :show, :new, :create, :update, :destroy]
   def index
     @product = Product.search(params[:search]).page(params[:page]).per Settings.per_index
   end
@@ -40,7 +41,12 @@ class Admin::ProductsController < Admin::BaseController
   end
 
   private
-
+  def check_admin_login
+    if session[:user_id].nil?
+      flash[:danger] = t "messages.ss_login"
+      redirect_to root_path
+    end
+  end
   def get_product
     @product = Product.find_by_id(params[:id])
     if @product.nil?
