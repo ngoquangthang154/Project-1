@@ -33,7 +33,7 @@ class User < ApplicationRecord
       SecureRandom.urlsafe_base64
     end
   end
-  
+
   def remember
     self.remember_token = User.new_token
     update_attribute :remember_digest, User.digest(remember_token)
@@ -46,5 +46,14 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_token, nil
+  end
+
+  private
+  def self.search search
+    if search
+      where("name LIKE ? or username LIKE ?", "%#{search}%", "%#{search}%")
+    else
+      all
+    end
   end
 end

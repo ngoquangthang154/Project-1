@@ -27,7 +27,10 @@ Rails.application.routes.draw do
     resources :products
     resources :news
     resources :trademarks
-    get "/admin/news/new", to: "admin/news#new", as: "newn"
+    resources :assorts
+    resources :menus
+    resources :typenews
+    resources :users
     root "products#index"
   end
 end
