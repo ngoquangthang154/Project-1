@@ -7,6 +7,11 @@ en:
       successproduct: "Product add success"
       notexist: "Product not exist"
       notdestroy: "product not destroy"
+      error: "Have a error"
+      cmtto: "To: "
+      successorder: "Your order success!"
+      logintocmt: "You need login to commented"
+      logintoorder: "You need login to order"
   views:
     show_product:
       filter:
@@ -34,7 +39,23 @@ en:
         oos: "Out of stock"
         continue: "Continue Shopping"
         addtocart: "Add to cart"
+        commenttitle: "commented of buyers"
+        yourcmt: "  Your Comment ..."
+        sendcmt: "Send your comment!"
       show:
         title: "show product"
         headtitle: "All product"
         order: "Order"
+      checkout:
+        title: "Check out!"
+        close: "Close"
+        send: "Send!"
+        content: "Content"
+        adress: "Adress"
+        phone: "Phone"
+        price: "Price"
+        dothurs: "Delivery on Thursday"
+        dofri: "Delivery on Friday"
+        yourcont: "Your content"
+        youradr: "Your adress"
+        yourphone: "Your phone"
