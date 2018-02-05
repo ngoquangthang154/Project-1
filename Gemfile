@@ -13,7 +13,6 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
-gem "bootstrap-will_paginate", "1.0.0"
 gem "faker"
 gem "jquery-rails"
 gem "bootstrap-sass", "3.3.7"
@@ -22,6 +21,10 @@ gem "bcrypt", "~> 3.1.7"
 gem "carrierwave", "~> 0.10.0"
 gem "mini_magick", "~> 4.3"
 gem "config"
+gem "kaminari"
+gem "ransack"
+gem "bootstrap-kaminari-views"
+gem "i18n-js"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

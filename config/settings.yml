@@ -4,3 +4,5 @@ maximum_phone: 11
 maximum_pass: 20
 maximum_name: 100
 img_size: should be less than 5MB
+
+per_index: 5
