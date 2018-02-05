@@ -1,0 +1,72 @@
+vi:
+  controllers:
+    show_product:
+      noproduct: "Không có sản phẩm nào"
+      notfoundproduct: "Sản phẩm không có"
+      selected: "Đã chọn sản phẩm"
+      successproduct: "Sản phẩm thêm thành công"
+      notexist: "Sản phẩm không tồn tại"
+      notdestroy: "Sản phẩm không phá xoa"
+      error: "Có lỗi"
+      notdestroy: "sản phẩm không hủy xoa"
+      cmtto: "To: "
+      successorder: "đặt hàng thành công !"
+      logintocmt: "Bạn cần đăng nhập để bình luận"
+      logintoorder: "Bạn cần đăng nhập để đặt hàng"
+  show_news:
+      notnew: "Tin tức không tìm thấy!"
+  views:
+    show_product:
+      filter:
+        filtrade: "Lọc theo nhãn hiệu"
+        filassort: "Bộ lọc theo loại"
+        filmin: "giá thấp nhất"
+        filmax: "giá cao nhất"
+        search: "tìm kiếm"
+      cart:
+        title: "Danh sách sản phẩm bạn chọn"
+        product: "Sản phẩm"
+        price: "Giá bán"
+        quantity: "Số lượng"
+        subtotal: "Tổng cộng"
+        continue: "Tiếp tục Mua sắm"
+        total: "Toàn bộ $ "
+        checkout: "Kiểm tra"
+      detail:
+        title: "chi tiết sản phẩm"
+        cmt: "nhận xét"
+        review: "đánh giá"
+        price: "giá hiện tại:"
+        userby: "người mua thích sản phẩm này!"
+        status : "trạng thái:"
+        oos: "Hết hàng"
+        continue: "Tiếp tục Mua sắm"
+        addtocart: "Thêm vào giỏ hàng"
+        commenttitle: "nhận xét của người mua"
+        yourcmt: "Bình luận của bạn ..."
+        sendcmt: "Gửi bình luận của bạn!"
+      show:
+        title: "Hiển thị sản phẩm"
+        headtitle: "Tất cả sản phẩm"
+        order: "Đặt hàng"
+      checkout:
+        title: "Kiểm tra!"
+        close: "Đóng"
+        send: "Gửi!"
+        content: "Nội dung"
+        adress: "địa chỉ"
+        phone: "Điện thoại"
+        price: "Giá bán"
+        dothurs: "Giao hàng vào ngày thứ Năm"
+        dofri: "Giao hàng vào thứ Sáu"
+        yourcont: "Nội dung của bạn"
+        youradr: "Địa chỉ của bạn"
+        yourphone: "Điện thoại của bạn"
+    show_news:
+      show:
+        title: "Danh mục đầu tư của chúng tôi"
+        destitle: "f bạn không có bất cứ điều gì bạn có thể đi đây!"
+        choice: "Lựa chọn loại tin tức"
+        all: "Tất cả các loại"
+      detail:
+        lefttitle: "Bạn có thể muốn đọc"

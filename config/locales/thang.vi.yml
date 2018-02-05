@@ -1,17 +1,17 @@
-en:
+vi:
   controllers:
     sessions_controller:
-      flash: "Invalid Username/password combination"
+      flash: "Hợp lệ kết hợp Tên người dùng / mật khẩu không hợp lệ"
     users_controller:
-      profile_updated: "Profile updated"
-      reg_success: "Register success"
-      reg_failed: "Register failed"
-      fail: "Fail"
+      profile_updated: "Hồ sơ cá nhân đã cập nhật"
+      reg_success: "Đăng ký thành công"
+      reg_failed: "Đăng kí thất bại"
+      fail: "Thất bại"
   views:
     layout:
       footer:
         logo: "Free Shop"
-        home: "Home"
+        home: "Trang chủ"
         blog: "Blog"
         pricing: "Pricing"
         about: "About"
@@ -34,39 +34,38 @@ en:
         shirt_woman: "Ao Nu"
         trousers_woman: "Quan Nu"
         accessories_woman: "Phu kien"
-        acc: "Account"
-        profile: "Profile"
-        settings: "Update User"
-        log_out: "Log out"
-        log_in: "Log in"
-        show_all_user: "All Users"
-        sign_up: "SignUp"
-        language: "Language"
+        acc: "Tài khoản"
+        profile: "Hồ sơ"
+        settings: "Cập nhật Người dùng"
+        log_out: "Đăng xuấtt"
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký"
+        language: "Ngôn ngữ"
         vi: "Viet Nam"
         en: "English"
     sessions:
       new:
-        remember: "Remember Account"
-        log_in: "Log in"
-        sign_up: "Sign up now!"
-        newuser: "New user?"
+        remember: "Nhớ Tài khoản"
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký !"
+        newuser: "Người dùng mới?"
     shared:
       error_mess:
-        error: "Error"
-        text: "The form contains"
+        error: "lỗi"
+        text: "Biểu mẫu có chứa"
     users:
       new:
-        create: "Create my account"
+        create: "Tạo tài khoản của tôi"
       edit:
-        savechanges: "Save changes"
+        savechanges: "Lưu thay đổi"
       show:
-        username: "User Name"
-        name: "Name"
-        phone: "Phone"
+        username: "Tên người dùng"
+        name: "Tên"
+        phone: "Điện thoại"
         email: "Email"
         role_admin: "Admin"
         role_user: "User"
         role: "Role"
-        edit: "Edit"
-        back: "Back"
+        edit: "Chỉnh sửa"
+        back: "Trở lại"
 

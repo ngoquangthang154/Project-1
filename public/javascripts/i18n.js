@@ -1,6 +1,4 @@
 // I18n.js
-// =======
-//
 // This small library provides the Rails I18n API on the Javascript.
 // You don't actually have to use Rails (or even Ruby) to use I18n.js.
 // Just make sure you export all translations in an object like this:
