@@ -1,0 +1,71 @@
+vi:
+  controllers:
+    sessions_controller:
+      flash: "Hợp lệ kết hợp Tên người dùng / mật khẩu không hợp lệ"
+    users_controller:
+      profile_updated: "Hồ sơ cá nhân đã cập nhật"
+      reg_success: "Đăng ký thành công"
+      reg_failed: "Đăng kí thất bại"
+      fail: "Thất bại"
+  views:
+    layout:
+      footer:
+        logo: "Free Shop"
+        home: "Trang chủ"
+        blog: "Blog"
+        pricing: "Pricing"
+        about: "About"
+        faq: "Faq"
+        contact: "Contact"
+        companyname: "Company Name"
+        add: "21 Revolution Street"
+        add2: "Paris, France"
+        phone: "+1 555 123456"
+        support: "support@company.com"
+        info: "About the company"
+        year: "2018"
+        info2: "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet."
+      header:
+        men: "Nam"
+        shirt_men: "Ao Nam"
+        trousers_men: "Quan Nam"
+        accessories_men: "Phu kien"
+        woman: "Nu"
+        shirt_woman: "Ao Nu"
+        trousers_woman: "Quan Nu"
+        accessories_woman: "Phu kien"
+        acc: "Tài khoản"
+        profile: "Hồ sơ"
+        settings: "Cập nhật Người dùng"
+        log_out: "Đăng xuấtt"
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký"
+        language: "Ngôn ngữ"
+        vi: "Viet Nam"
+        en: "English"
+    sessions:
+      new:
+        remember: "Nhớ Tài khoản"
+        log_in: "Đăng nhập"
+        sign_up: "Đăng ký !"
+        newuser: "Người dùng mới?"
+    shared:
+      error_mess:
+        error: "lỗi"
+        text: "Biểu mẫu có chứa"
+    users:
+      new:
+        create: "Tạo tài khoản của tôi"
+      edit:
+        savechanges: "Lưu thay đổi"
+      show:
+        username: "Tên người dùng"
+        name: "Tên"
+        phone: "Điện thoại"
+        email: "Email"
+        role_admin: "Admin"
+        role_user: "User"
+        role: "Role"
+        edit: "Chỉnh sửa"
+        back: "Trở lại"
+

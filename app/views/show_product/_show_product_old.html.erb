@@ -1,0 +1,30 @@
+<div class="product_show">
+    <div class="row-product">
+      <% @product.each_with_index do |product, index| %>
+        <% if index % 3 == 0 %>
+        <% end %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="product">
+          <%= link_to image_tag(product.img_detail), detailp_path(product), class: "img-product" %>
+          <br />
+          <div class="product-content">
+            <h4 class="product-title">
+              <%= link_to product.name, detailp_path(product)%>
+            </h4>
+            <div class="price-grey">
+              <%= "#{product.price} $" %>
+            </div>
+          </div>
+          <div class="product-read-more">
+            <p class="text-center">
+              <%= link_to listcart_path(product_id: product.id), class: "btn" do %>
+              <span class="glyphicon glyphicon-shopping-cart"></span>
+              <%= t "views.show_product.show.order" %>
+              <% end %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>

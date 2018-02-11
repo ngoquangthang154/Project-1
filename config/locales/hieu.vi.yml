@@ -1,0 +1,52 @@
+vi:
+  messages:
+    success: "Đã thêm thành công sản phẩm"
+    product_not_found: "Không tìm thấy sản phẩm"
+    size_max: "Kích thước ảnh là hơn 5MB"
+  header:
+    profile: "Hồ sơ"
+    title: "quản trị viên"
+    logout: "Đăng xuất"
+    news: "mới"
+    products: "Các sản phẩm"
+  save:
+    save: "Lưu thay đổi"
+  products:
+    show:
+      destroy_pr: "Xóa của bạn"
+    filter:
+      filtrade: "Lọc theo nhãn hiệu"
+      filassort: "lọc theo loại"
+      filmin: "Giá thấp nhất"
+      filmax: "Giá cao nhất"
+      search: "tìm kiếm"
+    index:
+      title: "hiển thị sản phẩm"
+      title2: "Tấm cuộn có Hover"
+      submit: "Gửi đi"
+      id: "ID"
+      name: "tên"
+      des: "miêu tả"
+      price: "Giá"
+      picture: "Hình ảnh"
+      action: "Hoạt động"
+    new:
+      title: "Thêm sản phẩm"
+      name: "Tên sản phẩm"
+      description: "miêu tả"
+      trademark: "Nhãn hiệu"
+      assort: "Phân loại"
+      picture: "Picture"
+      content: "Nội dung"
+      price: "Giá bán"
+      status: "Trạng thái"
+      keys: "từ khóa"
+      create: "Tạo sản phẩm"
+      success: "Đã thêm thành công sản phẩm"
+    flash:
+      update: "Cập nhật sản phẩm thành công"
+      destroy: "Xóa thành công sản phẩm"
+    edit:
+      title: "Chỉnh sửa Sản phẩm"
+    get_product:
+      check_nil: "Không tìm thấy"

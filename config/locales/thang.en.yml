@@ -3,6 +3,7 @@ en:
     sessions_controller:
       flash: "Invalid Username/password combination"
     users_controller:
+      profile_updated: "Profile updated"
       reg_success: "Register success"
       reg_failed: "Register failed"
       fail: "Fail"
@@ -35,12 +36,17 @@ en:
         accessories_woman: "Phu kien"
         acc: "Account"
         profile: "Profile"
-        settings: "Settings"
+        settings: "Update User"
         log_out: "Log out"
-        log_in: "Login"
+        log_in: "Log in"
+        show_all_user: "All Users"
         sign_up: "SignUp"
+        language: "Language"
+        vi: "Viet Nam"
+        en: "English"
     sessions:
       new:
+        remember: "Remember Account"
         log_in: "Log in"
         sign_up: "Sign up now!"
         newuser: "New user?"
@@ -51,6 +57,8 @@ en:
     users:
       new:
         create: "Create my account"
+      edit:
+        savechanges: "Save changes"
       show:
         username: "User Name"
         name: "Name"
