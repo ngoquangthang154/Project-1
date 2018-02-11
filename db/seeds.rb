@@ -17,7 +17,8 @@ User.create!(
   email: "admin1234@gmail.com",
   phone: "01888888888",
   role: 0,
-  admin: true
+  admin: true,
+  img_thumb: "/assets/user.png"
   )
 
 5.times do |n|
@@ -47,12 +48,11 @@ end
   ass_id  = 1
   tra_id  = 1
   name  = Faker::Name.name
-  img_detail = "https://images-eu.ssl-images-amazon.com/images/I/51U9AUB2viL._AC_UL260_SR200,260_FMwebp_QL70_.jpg"
+  img_detail = "/assets/ao.png"
   content = "content nnnnnnn"
   price = Random.rand(1...100)
   status = 1
   keys = "#giay, #dep"
-  star = 3.5
 
   Product.create!(
     assort_id: ass_id,
@@ -63,7 +63,7 @@ end
     price: price,
     status: status,
     keys: keys,
-    star: star)
+    count: 10)
 end
 
 99.times do |n|

@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 20180201174214) do
     t.float "price"
     t.integer "status"
     t.string "keys"
-    t.float "star"
+    t.integer "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "description"
@@ -142,6 +142,7 @@ ActiveRecord::Schema.define(version: 20180201174214) do
     t.string "name"
     t.string "phone"
     t.string "email"
+    t.string "img_thumb"
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.float :price
       t.integer :status
       t.string :keys
-      t.float :star
+      t.integer :count
 
       t.timestamps
     end
