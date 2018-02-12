@@ -9,15 +9,15 @@ class Product < ApplicationRecord
   validates :content,presence: true
   VALID_PRICE_REGEX = /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/
   validates :price, presence: true,format: {with: VALID_PRICE_REGEX}
-  mount_uploader :img_detail, ImageUploader
-  validate :img_size
+  # mount_uploader :img_detail, ImageUploader
+  # validate :img_size
 
   private
-  def img_size
-    if img_detail.size > 5.megabytes
-      errors.add :img_detail, Settings.img_size
-    end
-  end
+  # def img_size
+  #   if img_detail.size > 5.megabytes
+  #     errors.add :img_detail, Settings.img_size
+  #   end
+  # end
 
   def self.search search
     if search
