@@ -2,33 +2,45 @@
 <div class="container">
 	<div class="row">
 		<% @product.each do |product| %>
-		<div class="col-xs-12 col-sm-3 list-item-product">
-			<div class="block">
-				<div class="top">
-					<ul>
-						<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-						<li><span class="converse"><b>
-						<%= product.trademark.name %>
-						</b></span></li>
-						<li><a href="#"><i class="fa fa-shopping-basket" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
-				<div class="middle">
-					<img src="<%= product.img_detail %>" alt="pic" />
-				</div>
-				<div class="bottom">
-					<div class="heading"><p>
-						<%= link_to product.name, detailp_path(product)%>
-					</p></div>
-					<div class="info"><p>
-						<%= product.keys %>
-					</p></div>
-					<div class="price"><p><b>
-						<%= "#{product.price} $" %>
-					</b></p></div>
+			<div class="col-xs-12 col-sm-3 list-item-product">
+				<div class="block">
+					<div class="top">
+						<ul>
+							<li>
+								<a href="#">
+									<i class="fa fa-star-o" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li>
+								<span class="converse">
+									<b><%= product.trademark.name %></b>
+								</span>
+							</li>
+							<li>
+								<%= link_to listcart_path(product_id: product.id), remote: true do %>
+								<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+								<% end %>
+							</li>
+						</ul>
+					</div>
+					<div class="middle">
+						<%= link_to image_tag(product.img_detail), detailp_path(product), class: "img-product" %>
+					</div>
+					<div class="bottom">
+						<div class="heading">
+							<p><%= link_to product.name, detailp_path(product)%></p>
+						</div>
+						<div class="info">
+							<p><%= product.keys %></p>
+						</div>
+						<div class="price">
+							<p>
+								<b><%= "#{product.price} $" %></b>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		<% end %>
 	</div>
 </div>

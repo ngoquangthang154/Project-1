@@ -30,7 +30,7 @@ en:
         price: "Price"
         quantity: "Quantity"
         subtotal: "Subtotal"
-        continue: "Continue Shopping"
+        continue: "Shopping"
         total: "Total $ "
         checkout: "Checkout"
       detail:
@@ -41,7 +41,7 @@ en:
         userby: "of buyers enjoyed this product!"
         status : "status:"
         oos: "Out of stock"
-        continue: "Continue Shopping"
+        continue: "Shopping"
         addtocart: "Add to cart"
         commenttitle: "commented of buyers"
         yourcmt: "  Your Comment ..."
