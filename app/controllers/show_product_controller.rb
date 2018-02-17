@@ -1,8 +1,7 @@
 class ShowProductController < ApplicationController
   def show
     @product = Product.filtersearch(params[:search], params[:trademark],
-      params[:assort], params[:max], params[:min]).select :id, :name, :price,
-    :img_detail
+      params[:assort], params[:max], params[:min]).page(params[:page]).per(12).select :id, :name, :price, :img_detail, :keys, :trademark_id
     if session[:cart_p].nil?
       session[:cart_p] = {}
     end
@@ -13,8 +12,9 @@ class ShowProductController < ApplicationController
   end
 
   def detail
-    @product =  Product.getdetail(params[:id])
+    @product =  Product.getdetail params[:id]
     @countcmt = @product.comments.countcmt
+    @list = Product.getlist params[:id]
     @to_user = {
       name: "",
       reply: 0
@@ -42,18 +42,18 @@ class ShowProductController < ApplicationController
 
     if @id_p.nil?
       @cart = session[:cart_p]
-
     elsif /\A\d+\z/.match(@id_p)
       @cart = session[:cart_p]
-      if @cart.keys.include? @id_p
-        flash[:danger] = t "controllers.show_product.selected"
-        redirect_to listcart_url
-      else
-        if @product = Product.exists?(id: @id_p.to_i)
+      respond_to do |format|
+        if @cart.keys.include? @id_p
+          flash[:danger] = t "controllers.show_product.selected"
+          format.html { redirect_to listcart_url}
+          format.js
+        elsif @product = Product.exists?(id: @id_p.to_i)
           @cart[@id_p] = 1
           session[:cart_p] = @cart
-          flash[:success] = t "controllers.show_product.successproduct"
-          redirect_to listcart_url
+          format.html { redirect_to showp_url}
+          format.js
         else
           flash[:danger] = t "controllers.show_product.notfoundproduct"
           redirect_to showp_url

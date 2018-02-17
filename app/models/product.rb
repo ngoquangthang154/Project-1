@@ -12,6 +12,8 @@ class Product < ApplicationRecord
   mount_uploader :img_detail, ImageUploader
   validate :img_size
 
+  scope :getlist, -> (id){order(created_at: :desc).where.not(id: id).limit(3).select :id, :name, :img_detail, :price}
+
   private
   def img_size
     if img_detail.size > 5.megabytes

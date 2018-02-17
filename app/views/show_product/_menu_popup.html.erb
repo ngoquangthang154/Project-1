@@ -1,0 +1,13 @@
+<div class="fr-pop-wrap">
+  <h3 class="component-ttl"><span><b>Popular products</b></span></h3>
+  <ul class="fr-pop-tabs sections-show">
+    <li>
+    <%= link_to "All Categories", showp_path, class: "active" %>
+    </li>
+    <% Assort.all.each do |assort| %>
+    <li>
+      <%= link_to assort.name, showp_path(:assort => assort.id) %>
+    </li>
+    <% end %>
+  </ul>
+</div>

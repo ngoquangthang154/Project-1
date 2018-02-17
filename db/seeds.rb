@@ -1,4 +1,4 @@
-arrAssort = ["áo","Quần","Bộ","Đầy đủ"]
+arrAssort = ["áo","Quần","Bộ"]
 arrAssort.each do |as|
   name = as
   Assort.create!(name:  name)
@@ -48,7 +48,6 @@ end
   ass_id  = 1
   tra_id  = 1
   name  = Faker::Name.name
-  img_detail = "/assets/ao.png"
   content = "content nnnnnnn"
   price = Random.rand(1...100)
   status = 1
@@ -58,7 +57,7 @@ end
     assort_id: ass_id,
     trademark_id: tra_id,
     name:  name,
-    img_detail: img_detail,
+    img_detail: "/assets/ao.jpg",
     content: content,
     price: price,
     status: status,
