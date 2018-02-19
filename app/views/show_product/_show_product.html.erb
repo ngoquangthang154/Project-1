@@ -1,47 +1,143 @@
 <%= render "menu_popup" %>
 <div class="container">
-	<div class="row">
-		<% @product.each do |product| %>
-			<div class="col-xs-12 col-sm-3 list-item-product">
-				<div class="block">
-					<div class="top">
-						<ul>
-							<li>
-								<a href="#">
-									<i class="fa fa-star-o" aria-hidden="true"></i>
-								</a>
-							</li>
-							<li>
-								<span class="converse">
-									<b><%= product.trademark.name %></b>
-								</span>
-							</li>
-							<li>
-								<%= link_to listcart_path(product_id: product.id), remote: true do %>
-								<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-								<% end %>
-							</li>
-						</ul>
-					</div>
-					<div class="middle">
-						<%= link_to image_tag(product.img_detail), detailp_path(product), class: "img-product" %>
-					</div>
-					<div class="bottom">
-						<div class="heading">
-							<p><%= link_to product.name, detailp_path(product)%></p>
-						</div>
-						<div class="info">
-							<p><%= product.keys %></p>
-						</div>
-						<div class="price">
-							<p>
-								<b><%= "#{product.price} $" %></b>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		<% end %>
-	</div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="section-sb">
+        <div class="section-filter">
+          <div class="section-filter-cont">
+            <div class="section-filter-item">
+              <p class="section-filter-ttl">Style <i class="fa fa-angle-down"></i></p>
+              <div class="section-filter-fields">
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox2-1" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox2-1">Work</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox2-2" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox2-2">Vintage</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox2-3" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox2-3">Cute</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox2-4" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox2-4">Novelty</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox2-5" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox2-5">Brief</label>
+                </p>
+              </div>
+            </div>
+            <div class="section-filter-item opened">
+              <p class="section-filter-ttl">Material <i class="fa fa-angle-down"></i></p>
+              <div class="section-filter-fields">
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-1" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-1">Cotton</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-2" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-2">Spandex</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-3" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-3">Polyester</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-4" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-4">Acetate</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-5" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-5">Microfiber</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-6" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-6">Silk</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-checkbox3-7" value="on" type="checkbox">
+                  <label class="section-filter-checkbox" for="section-filter-checkbox3-7">Fur</label>
+                </p>
+              </div>
+            </div>
+            <div class="section-filter-item opened">
+              <p class="section-filter-ttl">Fabric Type <i class="fa fa-angle-down"></i></p>
+              <div class="section-filter-fields">
+                <p class="section-filter-field">
+                  <input id="section-filter-radio1-1" value="on" type="radio" name="section-filter-radio1">
+                  <label class="section-filter-radio" for="section-filter-radio1-1">Velour</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-radio1-2" value="on" type="radio" name="section-filter-radio1">
+                  <label class="section-filter-radio" for="section-filter-radio1-2">Batik</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-radio1-3" value="on" type="radio" name="section-filter-radio1">
+                  <label class="section-filter-radio" for="section-filter-radio1-3">Chiffon</label>
+                </p>
+                <p class="section-filter-field">
+                  <input id="section-filter-radio1-4" value="on" type="radio" name="section-filter-radio1">
+                  <label class="section-filter-radio" for="section-filter-radio1-4">Broadcloth</label>
+                </p>
+              </div>
+            </div>
+            <div class="section-filter-price">
+
+            </div>
+            <div class="section-filter-buttons">
+              <input class="btn btn-themes" id="set_filter" name="set_filter" value="Apply filter" type="button">
+              <input class="btn btn-link" id="del_filter" name="del_filter" value="Reset" type="button">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <% @product.each do |product| %>
+        <div class="col-xs-12 col-sm-4 list-item-product">
+          <div class="block">
+            <div class="top">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li>
+                  <span class="converse">
+                    <b><%= product.trademark.name %></b>
+                  </span>
+                </li>
+                <li>
+                  <%= link_to listcart_path(product_id: product.id), remote: true do %>
+                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+            <div class="middle">
+              <%= link_to image_tag(product.img_detail), detailp_path(product), class: "img-product" %>
+            </div>
+            <div class="bottom">
+              <div class="heading">
+                <p><%= link_to product.name, detailp_path(product)%></p>
+              </div>
+              <div class="info">
+                <p><%= product.keys %></p>
+              </div>
+              <div class="price">
+                <p>
+                  <b><%= "#{product.price} $" %></b>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 <%= paginate @product, theme: 'twitter-bootstrap-3' %>
