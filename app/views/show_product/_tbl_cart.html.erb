@@ -1,0 +1,36 @@
+<% @product_cart.each do |pc| %>
+<tr>
+  <td style="display:none;"><%= pc.id %></td>
+  <td class="cart-image">
+    <%= link_to image_tag(pc.img_detail), detailp_path(pc)%>
+  </td>
+  <td class="cart-ttl">
+    <%= link_to pc.name, detailp_path(pc) %>
+    <p><%= pc.keys %></p>
+  </td>
+  <td class="cart-price">
+    <b><%= "$ #{pc.price}" %></b>
+  </td>
+  <td class="cart-quantity">
+    <p class="cart-qnt">
+      <input id="<%= "input_count_#{pc.id}" %>" value="<%= @cart[pc.id.to_s] %>" type="text" readonly >
+      <%= link_to upcount_path(id: pc.id), class: "cart-plus", method: :post, remote: true do %>
+      <i class="fa fa-angle-up"></i>
+      <% end %>
+      <%= link_to dowcount_path(id: pc.id), class: "cart-minus", method: :post, remote: true do %>
+      <i class="fa fa-angle-down"></i>
+      <% end %>
+    </p>
+  </td>
+  <td class="cart-summ">
+    <b id="<%= "total_detail_#{pc.id}" %>" >
+      <%= "$ #{pc.price * @cart[pc.id.to_s]}" %>
+    </b>
+  </td>
+  <td class="cart-del icon-delete">
+    <%= link_to destroycart_path(id: pc.id), class: "btn btn-danger btn-sm", method: :post, remote: true do %>
+    <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>
+<% end %>

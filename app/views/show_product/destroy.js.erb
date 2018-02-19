@@ -1,0 +1,6 @@
+$("tr").find("td:first").each(function(){
+  if ($(this).text() == ("<%= raw @id_p %>")) {
+    $(this).parent().remove();
+  }
+});
+$("#total_sum").text("$ <%= raw @sum_cart %>");
