@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     post "cart/", to: "show_product#destroy", as: "destroycart"
     post "postcomment/", to: "show_product#postcomment", as: "postcmt"
     post "checkout/", to: "show_product#checkout", as: "checkout"
+    post "up/", to: "show_product#upcount", as: "upcount"
+    post "dow/", to: "show_product#dowcount", as: "dowcount"
+    get "clear/", to: "show_product#clearall", as: "clearall"
 
     namespace :admin do
       resources :searchs

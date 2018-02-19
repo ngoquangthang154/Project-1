@@ -1,4 +1,7 @@
 class ShowProductController < ApplicationController
+
+  before_action :total_sum, only: [:cart]
+
   def show
     @product = Product.filtersearch(params[:search], params[:trademark],
       params[:assort], params[:max], params[:min]).page(params[:page]).per(12).select :id, :name, :price, :img_detail, :keys, :trademark_id
@@ -33,7 +36,6 @@ class ShowProductController < ApplicationController
   end
 
   def cart
-    @total = 0
     @id_p = params[:product_id]
     @product_cart = []
     if session[:cart_p].any?
@@ -67,15 +69,19 @@ class ShowProductController < ApplicationController
 
   def destroy
     @id_p = params[:id]
-
-    if @id_p.nil? || !/\A\d+\z/.match(@id_p)
-      flash[:danger] = t "controllers.show_product.notdestroy"
-      redirect_to listcart_url
-    else
-      @temp = session[:cart_p]
-      @temp.delete(@id_p)
-      session[:cart_p] = @temp
-      redirect_to listcart_url
+    respond_to do |format|
+      if @id_p.nil? || !/\A\d+\z/.match(@id_p)
+        flash[:danger] = t "controllers.show_product.notdestroy"
+        format.html { redirect_to }
+        format.js
+      else
+        @temp = session[:cart_p]
+        @temp.delete(@id_p)
+        session[:cart_p] = @temp
+        total_sum
+        format.html { redirect_to }
+        format.js
+      end
     end
   end
 
@@ -148,12 +154,55 @@ class ShowProductController < ApplicationController
     end
   end
 
+  def upcount
+    @id_html = "#input_count_#{params[:id]}"
+    @total_detail = "#total_detail_#{params[:id]}"
+    if session[:cart_p][params[:id]] < Product.find(params[:id]).count
+      session[:cart_p][params[:id]] = session[:cart_p][params[:id]] + 1
+    end
+    @total = Product.find(params[:id]).price * session[:cart_p][params[:id]]
+    total_sum
+    respond_to do |format|
+      format.html { redirect_to}
+      format.js
+    end
+  end
+
+  def dowcount
+    @id_html = "#input_count_#{params[:id]}"
+    @total_detail = "#total_detail_#{params[:id]}"
+    if session[:cart_p][params[:id]] > 1
+      session[:cart_p][params[:id]] = session[:cart_p][params[:id]] - 1
+    end
+    @total = Product.find(params[:id]).price * session[:cart_p][params[:id]]
+    total_sum
+    respond_to do |format|
+      format.html { redirect_to}
+      format.js
+    end
+  end
+
+  def clearall
+    session[:cart_p] = {}
+    respond_to do |format|
+      format.html { redirect_to}
+      format.js
+    end
+  end
+
   private
 
   def date_of_next day
     date  = Date.parse(day)
     delta = date > Date.today ? 0 : 7
     date + delta
+  end
+
+  def total_sum
+    @sum_cart = 0
+    session[:cart_p].each do |key, value|
+      @sum_cart += Product.find(key.to_i).price * value.to_i
+    end
   end
 
 end

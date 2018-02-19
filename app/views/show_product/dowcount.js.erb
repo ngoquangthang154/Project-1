@@ -1,0 +1,3 @@
+$("<%= raw @id_html %>").val("<%= raw session[:cart_p][params[:id]] %>");
+$("<%= raw @total_detail %>").text("$ <%= raw @total %>");
+$("#total_sum").text("$ <%= raw @sum_cart %>");
