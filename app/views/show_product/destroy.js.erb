@@ -4,3 +4,5 @@ $("tr").find("td:first").each(function(){
   }
 });
 $("#total_sum").text("$ <%= raw @sum_cart %>");
+$("#txt_total").val("$ <%= raw @sum_cart %>");
+$("#cout_pc").text("<%= raw session[:cart_p].count %>");
