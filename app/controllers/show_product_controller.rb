@@ -36,6 +36,10 @@ class ShowProductController < ApplicationController
   end
 
   def cart
+    @myphone = ""
+    if !session[:user_id].nil?
+      @myphone = User.find(session[:user_id].to_i).phone
+    end
     @id_p = params[:product_id]
     @product_cart = []
     if session[:cart_p].any?
@@ -81,6 +85,19 @@ class ShowProductController < ApplicationController
         total_sum
         format.html { redirect_to }
         format.js
+      end
+    end
+  end
+
+  def hisp
+    if session[:user_id].nil?
+      flash[:danger] = "you need login"
+      redirect_to showp_url
+    else
+      @list_order = Order.getlist session[:user_id].to_i
+      if @list_order.nil?
+        flash[:danger] = "No order"
+        redirect_to showp_url
       end
     end
   end
@@ -157,13 +174,17 @@ class ShowProductController < ApplicationController
   def upcount
     @id_html = "#input_count_#{params[:id]}"
     @total_detail = "#total_detail_#{params[:id]}"
+    @check_c = 0
     if session[:cart_p][params[:id]] < Product.find(params[:id]).count
       session[:cart_p][params[:id]] = session[:cart_p][params[:id]] + 1
+      @check_c = 0
+    else
+      @check_c = 1
     end
     @total = Product.find(params[:id]).price * session[:cart_p][params[:id]]
     total_sum
     respond_to do |format|
-      format.html { redirect_to}
+      format.html { redirect_to }
       format.js
     end
   end

@@ -55,8 +55,12 @@
         <li><a href="#">OFFERS</a></li>
         <li><a href="contact.html">CONTACT</a></li>
         <li class="shop_icon">
-          <%= link_to image_tag("menu_icon_img.png", alt: "logo")%>
-          <span>10</span>
+          <%= link_to hisp_path, class: "glyphicon glyphicon-hourglass" do %>
+          <% end %>
+        </li>
+        <li class="shop_icon">
+          <%= link_to image_tag("menu_icon_img.png", alt: "logo"), listcart_path %>
+          <span id="cout_pc"><%= session[:cart_p].count %></span>
         </li>
         </ul>
       </nav>

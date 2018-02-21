@@ -1,0 +1,61 @@
+<h1>The order of you</h1>
+<div class="container">
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Infor Order</th>
+            <th colspan="5">Detail product of order</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @list_order.each_with_index do |item, i| %>
+          <tr>
+            <td align="center" valign="middle"><%= i + 1 %></td>
+            <td>
+              <p>Code: <strong><%=item.oder_code %></strong></p>
+              <p>Day: <strong><%=item.date_purchase.to_date %></strong></p>
+              <p>Content: <strong><%=item.content %></strong></p>
+              <p>Adress: <strong><%=item.adress %></strong></p>
+              <p>Price: <strong><%=item.price %></strong></p>
+              <p>Phone: <strong><%=item.phone %></strong></p>
+            </td>
+            <td colspan="5">
+              <table class="table table-bordered" id="cssTable">
+                <tr>
+                  <th>image</th>
+                  <th>product</th>
+                  <th>quantity</th>
+                  <th>Price detail</th>
+                  <th>Price total</th>
+                </tr>
+                <% OrderDetail.where(order_id: item.id).each do |itemd| %>
+                <tr>
+                 <td>
+                   <img src="<%= itemd.product.img_detail %>" width= "60px">
+                 </td>
+                 <td>
+                  <%= link_to itemd.product.name, detailp_path(itemd.product) %>
+                </td>
+                <td>
+                  <%= itemd.quantity %>
+                </td>
+                <td>
+                  <%= "$ #{itemd.price_detail}" %>
+                </td>
+                <td>
+                  <%= "$ #{itemd.price_total}" %>
+                </td>
+              </tr>
+              <% end %>
+            </table>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
