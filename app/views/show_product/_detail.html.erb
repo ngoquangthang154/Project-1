@@ -43,7 +43,7 @@
               <% end %>
             </h5>
             <div class="action">
-              <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default" do %>
+              <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default", remote: true do %>
               <%= t "views.show_product.detail.addtocart" %>
               <% end %>
               <%= link_to showp_path, class: "text-center back-to-show btn btn-default" do %>

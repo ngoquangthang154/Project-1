@@ -1,0 +1,58 @@
+<div id="cmt-show">
+  <% @countcmt.each do |cmt| %>
+  <li id="coment_id_<%= cmt.id %>">
+    <div class="comment-main-level">
+      <div class="comment-avatar">
+        <img src="/assets/user.png">
+      </div>
+      <div class="comment-box">
+        <div class="comment-head">
+          <h6 class="comment-name by-author">
+            <a href="#" class="user-cmt-name" >
+              <%= User.find_by_id(cmt.user_id).name %>
+            </a>
+          </h6>
+          <span>
+            <%= cmt.time_cmt.strftime("%d/%m/%Y %H:%M:%S") %>
+          </span>
+          <%= link_to reply_path(id_cmt: cmt.id), method: :post do %>
+          <i class="fa fa-reply"></i>
+          <% end %>
+        </div>
+        <div class="comment-content">
+          <%= cmt.comment %>
+        </div>
+      </div>
+    </div>
+    <% if @product.comments.getlistcmt(cmt.id).count > 0 %>
+    <ul class="comments-list reply-list ul-user-cmt">
+      <% @product.comments.getlistcmt(cmt.id).each do |cmt_rep| %>
+      <li id="coment_id_<%= cmt_rep.id %>">
+        <div class="comment-avatar">
+          <img src="/assets/user.png">
+        </div>
+        <div class="comment-box">
+          <div class="comment-head">
+            <h6 class="comment-name <%= "by-author" if cmt.user_id == cmt_rep.user_id %>">
+              <a href="#"class="user-cmt-name" >
+                <%= User.find_by_id(cmt_rep.user_id).name %>
+              </a>
+            </h6>
+            <span>
+              <%= cmt_rep.time_cmt.strftime("%d/%m/%Y %H:%M:%S") %>
+            </span>
+            <%= link_to reply_path(id_cmt: cmt_rep.id), method: :post do %>
+            <i class="fa fa-reply"></i>
+            <% end %>
+          </div>
+          <div class="comment-content">
+            <%= cmt_rep.comment %>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+  </li>
+  <% end %>
+</div>
