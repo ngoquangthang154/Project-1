@@ -161,6 +161,10 @@ class ShowProductController < ApplicationController
               price_detail: price_detail,
               price_total: price_detail * val
               )
+            product = Product.find(key)
+            product.count = product.count - val
+            product.save
+
             order_detail.save
           end
           session[:cart_p] = {}
