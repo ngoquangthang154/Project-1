@@ -46,7 +46,7 @@ vi:
         yourcmt: "Bình luận của bạn ..."
         sendcmt: "Gửi bình luận của bạn!"
       show:
-        title: "Hiển thị sản phẩm"
+        title: "ELIXIR Fashion"
         headtitle: "Tất cả sản phẩm"
         order: "Đặt hàng"
       checkout:

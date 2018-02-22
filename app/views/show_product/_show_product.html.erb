@@ -1,9 +1,7 @@
 <%= render "menu_popup" %>
 <div class="container">
   <div class="row">
-
     <%= render "filter" %>
-
     <div class="col-sm-9">
       <% @product.each do |product| %>
         <div class="col-xs-12 col-sm-4 list-item-product">
@@ -12,7 +10,6 @@
               <ul>
                 <li>
                   <a href="#">
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li>
@@ -21,7 +18,7 @@
                   </span>
                 </li>
                 <li>
-                  <%= link_to listcart_path(product_id: product.id), remote: true do %>
+                  <%= link_to listcart_path(product_id: product.id), class: "icon_shopping_cart", remote: true do %>
                   <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                   <% end %>
                 </li>
@@ -49,4 +46,6 @@
     </div>
   </div>
 </div>
-<%= paginate @product, theme: 'twitter-bootstrap-3' %>
+<div class= "center_block" >
+  <%= paginate @product, theme: 'twitter-bootstrap-3', class: "center_block_paginate" %>
+</div>
