@@ -1,8 +1,24 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @user do |f| %>
-      <%= render "shared/error_messages_user" %>
+  <div class="col-md-5 col-md-offset-3 " >
+    
+  </div>
+</div>
+<div class="container Personal_info_edit">
+  <h2 class="page-header page-header-edit ">Edit Profile</h2>
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center img_user">
+        <img src="http://www.pvhc.net/img219/eraakhsgiuftjfifhhcj.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
 
+      <h4 class="Personal_info_edit_name">Personal info <b><%= @user.username %></b>  </h4>
+      <%= form_for @user do |f| %>
+    <%= render "shared/error_messages_user_edit" %>
+      
       <%= f.label :email %>
       <%= f.email_field :email, class: "form-control" %>
 
@@ -18,7 +34,8 @@
       <%= f.label :name %>
       <%= f.text_field :name, class: "form-control" %>
 
-      <%= f.submit t("views.users.edit.savechanges"), class: "btn btn-primary" %>
+      <%= f.submit t("views.users.edit.savechanges"), class: "btn btn-primary center-block btn_savechanges" %>
     <% end %>
+    </div>
   </div>
 </div>

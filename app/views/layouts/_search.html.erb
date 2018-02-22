@@ -1,0 +1,9 @@
+  <li class="searchbox">
+    <%= form_tag showp_path, :method => "get", :id => "products_search" do %>
+      <%= text_field_tag :search, params[:search], placeholder: "", class: 'form-control searchbox-input', onkeyup: "buttonUp();" %>
+      <span class="searchbox-icon">
+        <%= submit_tag "Search", class: 'searchbox-submit' %>
+        <i class="fa fa-search"></i>
+      </span>
+    <% end %>
+  </li>

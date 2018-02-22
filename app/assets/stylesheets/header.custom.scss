@@ -124,6 +124,10 @@ body {
   margin: 0;
   padding: 0;
 }
+.searchbox-icon{
+  color: white; 
+}
+
 /*-------------------------
 [2.1.1.1 Header-Social-Icon ]
 -------------------------*/
@@ -148,7 +152,7 @@ body {
 .social_others li {margin-left:10px;}
 .social_others a,.header_top_right ul li a{
   color: rgb(135, 135, 135);
-  font-size: 13px;
+  font-size: 15px;
   text-transform: inherit;
 }
 .header_top_right.text-right a,.shop_icon {margin-right: 10px;}
@@ -184,7 +188,7 @@ body {
 }
 li.searchbox.searchbox-open {padding-top: 0;}
 .searchbox-input::-webkit-input-placeholder,.searchbox-input:-moz-placeholder,.searchbox-input::-moz-placeholder,.searchbox-input:-ms-input-placeholder {color: #3a4b60;}
-.searchbox-icon, .searchbox-submit {
+.searchbox-submit {
   background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
   border: medium none;
   color: #3a4b60;
@@ -197,6 +201,21 @@ li.searchbox.searchbox-open {padding-top: 0;}
   top: 0;
   width:25px;
 }
+
+.searchbox-icon {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #3a4b60;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  line-height: 32px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width:25px;
+}
+
 .searchbox-open {
   border: 1px solid #3a4b60;
   width: 50%;

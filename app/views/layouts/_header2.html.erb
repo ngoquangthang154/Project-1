@@ -1,4 +1,4 @@
-<div class="container ">
+<div class="container " id="navbar_header">
   <div class="header_top">
     <div class="row">
       <div class="col-md-6">
@@ -10,13 +10,19 @@
             <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
           </ul>
           <ul class="social_others">
-            <li><a><i class="fa fa-phone"></i>012345678</a></li>
-            <li><a href="#"><i class="fa fa-envelope-o"></i>admin.com</a></li>
-            <li class="language_icon">
-            <select class="selectpicker language_icon" data-width="fit">
-              <option data-content='<i class="flag-icon flag-icon-vn"></i> VietNam'>VietNam</option>
-              <option  data-content='<i class="flag-icon flag-icon-us"></i> English'>English</option>
-            </select>
+            <li><a><i class="fa fa-phone"></i><%= t "views.layout.header.phone"%></a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"></i><%= t "views.layout.header.admintxt"%></a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><%= t "views.layout.header.language"%><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="presentation">
+                  <%= link_to t("views.layout.header.vi"), locale:"vi"%>
+                </li>
+                <li role="presentation">
+                  <%= link_to t("views.layout.header.en"), locale:"en" %>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -24,20 +30,34 @@
       <div class="col-md-6">
         <div class="header_top_right text-right">
           <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Wishlist</a></li>
-            <li><a data-toggle="modal" data-target="#myModal"> Login</a></li>
-            <li class="searchbox">
-              <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-              <input type="submit" class="searchbox-submit" value="">
-              <span class="searchbox-icon"><i class="fa fa-search"></i></span>
-          </li>
+            <% if logged_in? %>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><i class="fa fa-user"></i><%= t "views.layout.header.acc"%><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                <li role="presentation">
+                  <%= link_to "Home", root_path %>
+                </li>
+                <li role="presentation">
+                  <%= link_to t("views.layout.header.profile"), current_user %>
+                </li>
+                <li role="presentation">
+                  <%= link_to t("views.layout.header.settings"), edit_user_path(current_user) %>
+                </li>
+                <li>
+                  <%= link_to t("views.layout.header.log_out"), logout_path, method: :delete %>
+                </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><a data-toggle="modal" data-target="#myModal"> <i class="fa fa-lock"></i><%= t "views.layout.header.regis_login" %></a></li>
+            <% end %>
           </ul>
         </div>
       </div>
     </div>
   </div>
-  <div class="row mega_relative">
+  <div class="row mega_relative" >
     <div class="col-xs-12 col-sm-2">
       <div class="logo head_lo">
       <%= link_to image_tag("logo.png", alt: "logo"), root_path%>
@@ -47,13 +67,10 @@
       <div class="mainmenu float-right">
       <nav>
         <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="#">NEW</a></li>
-        <li><a href="#">FEATURED</a></li>
-        <li><a href="#">BLOG</a></li>
-        <li><a href="#">BRAND</a></li>
-        <li><a href="#">OFFERS</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+        <li><%= link_to t("views.layout.header.home"), root_path%></li>
+        <li><%= link_to t("views.layout.header.new")%></li>
+        <li><%= link_to t("views.layout.header.blog")%></li>
+        <li><%= link_to t("views.layout.header.contact")%></li>
         <% if !session[:user_id].nil? %>
         <li class="shop_icon">
           <%= link_to hisp_path, class: "glyphicon glyphicon-hourglass" do %>
@@ -112,7 +129,7 @@
               </div>
               <div class="col-md-12">
                 <div class="btn-group btn-group-justified">
-                  <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                  <a href="#" class="btn btn-primary">Facebooks</a> <a href="#" class="btn btn-danger">
                     Google</a>
                 </div>
               </div>
@@ -123,3 +140,24 @@
     </div>
   </div>
 </div>
+<!-- <style type="text/css">
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+</style>
+<script type="text/javascript">
+  window.onscroll = function() {myFunction()};
+
+var navbar_header = document.getElementById("navbar_header");
+var sticky = navbar_header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar_header.classList.add("sticky")
+  } else {
+    navbar_header.classList.remove("sticky");
+  }
+}
+</script> -->

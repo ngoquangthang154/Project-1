@@ -26,6 +26,13 @@ vi:
         year: "2018"
         info2: "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet."
       header:
+        contact: liên hệ
+        blog: "Tin tức"
+        new: "New"
+        home: "Trang Chủ"
+        regis_login: " Đăng kí / Đăng nhập"
+        phone: "012345678"
+        admintxt: "admin.com"
         men: "Nam"
         shirt_men: "Ao Nam"
         trousers_men: "Quan Nam"

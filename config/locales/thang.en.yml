@@ -26,6 +26,13 @@ en:
         year: "2018"
         info2: "Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet."
       header:
+        contact: Contact
+        blog: "Blog"
+        new: "New"
+        home: "Home"
+        regis_login: " Registration /Login"
+        phone: "012345678"
+        admintxt: "admin.com"
         men: "Nam"
         shirt_men: "Ao Nam"
         trousers_men: "Quan Nam"
@@ -34,7 +41,7 @@ en:
         shirt_woman: "Ao Nu"
         trousers_woman: "Quan Nu"
         accessories_woman: "Phu kien"
-        acc: "Account"
+        acc: " Account"
         profile: "Profile"
         settings: "Update User"
         log_out: "Log out"
@@ -52,8 +59,8 @@ en:
         newuser: "New user?"
     shared:
       error_mess:
-        error: "Error"
-        text: "The form contains"
+      error: "Error"
+      text: "The form contains"
     users:
       new:
         create: "Create my account"
@@ -69,4 +76,3 @@ en:
         role: "Role"
         edit: "Edit"
         back: "Back"
-
