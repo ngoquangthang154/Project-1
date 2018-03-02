@@ -1,3 +1,8 @@
 $("<%= raw @id_html %>").val("<%= raw session[:cart_p][params[:id]] %>");
 $("<%= raw @total_detail %>").text("$ <%= raw @total %>");
 $("#total_sum").text("$ <%= raw @sum_cart %>");
+$("#txt_total").val("$ <%= raw @sum_cart %>");
+
+if (("<%= raw @check_c %>") == 1) {
+  alert("product max count");
+};

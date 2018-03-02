@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     post "up/", to: "show_product#upcount", as: "upcount"
     post "dow/", to: "show_product#dowcount", as: "dowcount"
     get "clear/", to: "show_product#clearall", as: "clearall"
+    get "hisp/", to: "show_product#hisp", as: "hisp"
+
 
     namespace :admin do
       resources :searchs

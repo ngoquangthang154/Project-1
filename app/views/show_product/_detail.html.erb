@@ -14,11 +14,11 @@
               <div class="stars">
                 <% for i in 0...5 %>
                 <% if i+1 < @product.rates.average(:rate).to_f %>
-                <span class="fa fa-star checked"></span>
+                <i class="fa fa-star checked"></i>
                 <%elsif (@product.rates.average(:rate).to_f - @product.rates.average(:rate).to_i).abs > 0 && @product.rates.average(:rate).to_i == i %>
-                <span class="fa fa-star-half-o checked"></span>
+                <i class="fa fa-star-half-o checked"></i>
                 <%else%>
-                <span class="fa fa-star "></span>
+                <i class="fa fa-star"></i>
                 <% end %>
                 <% end %>
               </div>
@@ -43,7 +43,7 @@
               <% end %>
             </h5>
             <div class="action">
-              <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default" do %>
+              <%= link_to listcart_path(product_id: @product.id), class: "text-center add-to-cart btn btn-default", remote: true do %>
               <%= t "views.show_product.detail.addtocart" %>
               <% end %>
               <%= link_to showp_path, class: "text-center back-to-show btn btn-default" do %>

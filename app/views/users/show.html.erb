@@ -1,33 +1,43 @@
-<div class="col-md-offset-3">
-  <div class="input-group user-info col-xs-6" >
-    <span class="input-group-addon"><%= t "views.users.show.username"%></span>
-    <span class="form-control"><%= @user.username %></span>
+ <div class="container show_user">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-md-4 col-sm-6 col-xs-12">
+      <div class="text-center img_user">
+        <img src="http://www.pvhc.net/img219/eraakhsgiuftjfifhhcj.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+      </div>
+    </div>
+    <!-- edit form column -->
+    <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      
+      <h3 class="Personal_info">Personal info</h3>
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-3 control-label"><%= t "views.users.show.username"%></label>
+          <div class="col-lg-8">
+            <span class="form-control"><%= @user.username %></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label"><%= t "views.users.show.name" %></label>
+          <div class="col-lg-8">
+            <span class="form-control"><%= @user.name %></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label"><%= t "views.users.show.phone" %></label>
+          <div class="col-lg-8">
+            <span class="form-control"><%= @user.phone %></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label"><%= t "views.users.show.email" %></label>
+          <div class="col-lg-8">
+            <span class="form-control"><%= @user.email %></span>
+          </div>
+        </div>
+        <%= link_to t("views.users.show.edit"), edit_user_path(@user), class: "btn btn-primary"%>
+        <%= link_to t("views.users.show.back"), root_path, class: "btn btn-primary" %>
+      </form>
+    </div>
   </div>
-
-  <div class="input-group user-info col-xs-6">
-    <span class="input-group-addon"><%= t "views.users.show.name" %></span>
-    <span class="form-control"><%= @user.name %></span>
-  </div>
-
-  <div class="input-group user-info col-xs-6">
-    <span class="input-group-addon"><%= t "views.users.show.phone" %></span>
-    <span class="form-control"><%= @user.phone %></span>
-  </div>
-
-  <div class="input-group user-info col-xs-6">
-    <span class="input-group-addon"><%= t "views.users.show.email" %></span>
-    <span class="form-control"><%= @user.email %></span>
-  </div>
-
-  <div class="input-group user-info col-xs-6">
-   <span class="input-group-addon"><%= t "views.users.show.role" %></span>
-   <% if @user.role == 1%>
-      <span class="form-control"><%= t "views.users.show.role_admin"  %></span>
-    <% else %>
-      <span class="form-control"><%= t "views.users.show.role_user"  %></span>
-    <% end %>
-  </div>
-
-  <%= link_to t("views.users.show.edit"), edit_user_path(@user), class: "btn btn-primary"%>
-  <%= link_to t("views.users.show.back"), root_path, class: "btn btn-primary" %>
 </div>

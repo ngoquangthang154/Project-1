@@ -9,8 +9,8 @@ class Product < ApplicationRecord
   validates :content,presence: true
   VALID_PRICE_REGEX = /\A(\$)?(\d+)(\.|,)?\d{0,2}?\z/
   validates :price, presence: true,format: {with: VALID_PRICE_REGEX}
-  mount_uploader :img_detail, ImageUploader
-  validate :img_size
+  # mount_uploader :img_detail, ImageUploader
+  # validate :img_size
 
   scope :getlist, -> (id){order(created_at: :desc).where.not(id: id).limit(3).select :id, :name, :img_detail, :price}
 
